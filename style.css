@@ -1,0 +1,187 @@
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) */
+
+@media (max-width:767px) {
+    p {
+        
+        font-size: 14px;
+        font-family:arial Arial, Helvetica, sans-serif;
+    }
+    h4{
+        
+        font-size: 17px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .menu {
+        padding-top: 20px;
+    
+    }
+    .modal-header{
+        text-align: center !important;
+        font-size: 17px;
+        font-family: 'Montserrat', sans-serif;
+        padding: 1px 1px 1px 1px;
+        color: darkblue;
+
+    }
+    .colorcheck{
+        color: black;
+        text-align: left;
+    }
+    .btnsendpadding{
+        padding: 2px 1px 1px 1px !important;
+        text-align: center !important;
+        align-items: center !important;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px)*/
+@media (max-width:991px) and (min-width:768px) { 
+    h4{        
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    p {        
+        font-size: 17px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #np {
+        text-align: center;
+    }
+
+    .menu {
+        padding-top: 25px;
+
+    }
+    .menu {
+        padding-top: 20px;
+    
+    }
+    #header-modal{
+        text-align: center !important;
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+        padding: 1px 1px 1px 1px;
+        color: darkblue;
+
+    }
+    .colorcheck{
+        color: black;
+        text-align: left;
+    }
+    .btnsendpadding{
+        padding: 3px 2px 2px 2px !important;
+        text-align: center !important;
+        align-items: center !important;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) */
+@media (max-width:991px) and (min-width:768px) {
+    p {
+        font-size: 20px;
+        font-family: arial Arial, Helvetica, sans-serif
+    }
+    h4{
+        font-size: 23px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .menu {
+        padding-top: 30px;
+    
+    }
+    #header-modal{
+        text-align: center !important;
+        font-size: 23px;
+        font-family: 'Montserrat', sans-serif;
+        padding: 1px 1px 1px 1px;
+        color: darkblue;
+
+    }
+    .colorcheck{
+        color: black;
+        text-align: left;
+    }
+    .btnsendpadding{
+        padding: 5px 3px 3px 3px !important;
+        text-align: center !important;
+        align-items: center !important;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (max-width:1199px) and (min-width: 992px) {
+    p {
+        font-size: 23px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    h4{
+        font-size: 25px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .menu {
+        padding-top: 35px;
+    
+        
+    }
+    #header-modal{
+        text-align: center !important;
+        font-size: 25px;
+        font-family: 'Montserrat', sans-serif;
+        padding: 1px 1px 1px 1px;
+        color: darkblue;
+
+    }
+    .colorcheck{
+        color: black;
+        text-align: left;
+    }
+    .btnsendpadding{
+        padding: 7px 4px 4px 4px !important;
+        text-align: center !important;
+        align-items: center !important;
+    }
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) */
+@media (min-width: 1200px) {
+    p {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+    } 
+    h4{
+        font-size: 28px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+.line {
+    display: flex;
+}
+.menu {
+    padding: 500px 0px 0px 0px;
+    margin: 00px 0px 0px 0px;
+
+}
+#header-modal{
+    text-align: center !important;
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 1px 1px 1px 1px;
+    color: darkblue;
+
+}
+.colorcheck{
+    color: black;
+    text-align: left;
+}
+#btnsendpadding{
+    padding: 10px 4px 4px 4px !important;
+    text-align: center !important;
+    align-items: center !important;
+}
+}
