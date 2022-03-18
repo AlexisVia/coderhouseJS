@@ -188,22 +188,32 @@ console.log("hasta aqui llego")
 
 function mostrarDatos(){    
     
-    let respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase;
+    let respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
     
-    while(respuesta != "SI" || "NO" || "S" || "N"){
+    while (
+
+        respuesta != "SI" &&
+        
+        respuesta != "NO" &&
+        
+        respuesta != "S" &&
+        
+        respuesta != "N"
+        
+        ){
         alert("Respuesta Incorrecta. Seleccione SI o NO")
         respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase;
     }
-    if (respuesta == "SI" || "S"  ){
+    if (respuesta === "SI" || respuesta === "S"  ){
         alert("En el dia "+fecha+" el usuario "+" le ha asignado al operador inmobiliario "+operadorInmobiliario+" quien tiene como telefono de contacto "+telContacto+" al propietario"+propietario+" quien tiene una propiedad con una propiedad ubicada en "+direccion+" con una superficie total de "+superficieTotal+" mts2 y un area privada de "+" mts2. Cuenta con "+dormitorios+" dormitorios, "+banos+" baños, y una antiguedad de "+antiguedad+" años. El valor de los gastos comunes es de $ "+gastosComunes+" Para esta propiedad el usuario ha agregado las siguientes notas: "+notas)
         alert("Hasta pronto "+usuario+" que tengas buen dia")
         }
-    else if (respuesta == "NO" || "N" ){
+    else if (respuesta === "NO" || respuesta === "N" ){
         alert("Hasta pronto "+usuario+" que tengas buen dia")
         } 
     else {
         alert("Respuesta Incorrecta. Seleccione SI o NO")
-        respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase;
+        respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
         }
     }   
         
