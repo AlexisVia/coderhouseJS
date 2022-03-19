@@ -250,6 +250,5 @@ function ingresarDatos(){
 //La idea a futuro sera que la funcion de INGRESAR datos se active con un clik en un boton
 ingresarDatos()
 
-//La idea a futuro sera que la funcion de MOSTRAR datos se active con un clik en un boton
 
 
