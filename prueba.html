@@ -1,0 +1,34 @@
+<script>
+
+function ingresarNotas(){
+    notas = prompt("Ingresa detalles extras que creas pertinentes");
+}
+alert("hola")
+function opcionMostrar(){ 
+    let respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
+    while (
+        (respuesta != "SI") &&
+            
+        (respuesta != "NO") &&
+                
+        (respuesta != "S") &&
+                
+        (respuesta != "N")
+    ) {
+            if ((respuesta === "SI") && (respuesta === "S"  )){
+                alert("mostrarDatos")
+                break
+                }
+            else if ((respuesta === "NO") && (respuesta ==="N")) {
+                alert("noMostrarDatos")
+                break
+                } 
+            else {
+                alert("resultado falso")
+                respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
+            }
+  }
+}
+opcionMostrar()
+</script>
+            

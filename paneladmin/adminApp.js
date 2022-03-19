@@ -21,6 +21,10 @@ let notas = "notas"
 
 // My Global Function
 
+function datoIncorrecto(){
+    alert("El dato ingresado no es correcto. Intenta Nuevamente")
+}
+
 function noNumeros()
 {
     alert("No se admiten Numeros. Intenta Nuevamente")
@@ -30,7 +34,7 @@ function noTexto()
     alert("Solo se admiten Numeros. Intenta Nuevamente")
 }
 function mostrarDatos(){
-    alert("En el dia "+dia+"/"+mes+"/"+year+" el " +usuario+" le ha asignado al operador inmobiliario "+operadorInmobiliario+" quien tiene como telefono de contacto "+telContacto+" al propietario "+propietario+" quien posee una propiedad ubicada en "+direccion+" con una superficie total de "+superficieTotal+" mts2 y un area privada de "+areaPrivada+" mts2. Cuenta con "+dormitorios+" dormitorios, "+banos+" baños, y una antiguedad de "+antiguedad+" años. El valor de los gastos comunes es de $ "+gastosComunes+" Para esta propiedad el usuario ha agregado las siguientes notas: "+notas)
+    alert("En el dia "+dia+"/"+mes+"/"+year+" el usuario " +usuario+" le ha asignado al operador inmobiliario "+operadorInmobiliario+" quien tiene como telefono de contacto "+telContacto+" al propietario "+propietario+" quien posee una propiedad ubicada en "+direccion+" con una superficie total de "+superficieTotal+" mts2 y un area privada de "+areaPrivada+" mts2. Cuenta con "+dormitorios+" dormitorios, "+banos+" baños, y una antiguedad de "+antiguedad+" años. El valor de los gastos comunes es de $ "+gastosComunes+" Para esta propiedad el usuario ha agregado las siguientes notas: "+notas)
     alert("Hasta pronto "+usuario+" que tengas buen dia")
 }
 
@@ -55,6 +59,11 @@ function ingresarDia(){
     while (isNaN(dia)) 
     {
         noTexto()
+        dia = prompt("Ingresa el mes");
+    }
+    while (dia>31 || dia<=0)
+    {
+        datoIncorrecto()
         dia = prompt("Ingresa el dia");
     }
     return
@@ -66,6 +75,11 @@ function ingresarMes(){
         noTexto()
         mes = prompt("Ingresa el mes");
     }
+    while (mes>12 || mes<=0)
+    {
+        datoIncorrecto()
+        mes = prompt("Ingresa el mes");
+    }
     return
 }
 function ingresarYear(){
@@ -73,7 +87,12 @@ function ingresarYear(){
     while (isNaN(year)) 
     {
         noTexto()
-        dia = prompt("Ingresa el año");
+        year = prompt("Ingresa el año");
+    }
+    while (year<2022)
+    {
+        datoIncorrecto()
+        year = prompt("Ingresa el año");
     }
     return
 }
@@ -84,6 +103,11 @@ function ingresarTelContacto(){
     while (isNaN(telContacto)) 
     {
         noTexto()
+        telContacto = prompt("Ingresa el telefono de contacto del operador inmobiliario asignado");
+    }
+    while (telContacto<091000000 || telContacto>099999999) 
+    {
+        datoIncorrecto()
         telContacto = prompt("Ingresa el telefono de contacto del operador inmobiliario asignado");
     }
 }
@@ -121,6 +145,11 @@ function ingresarAreaPrivada(){
         noTexto()
         areaPrivada = prompt("Ingresa la superficie de area privada en m2");
     }
+    while (areaPrivada>superficieTotal) 
+    {
+        datoIncorrecto()
+        areaPrivada = prompt("Ingresa la superficie de area privada en m2");
+    }
 }
 
 
@@ -143,6 +172,11 @@ function ingresarDormitorios(){
         noTexto()
         dormitorios = prompt("Ingresa la cantidad de dormitorios");
     }
+    while (dormitorios>ambientes) 
+    {
+        datoIncorrecto()
+        dormitorios = prompt("Ingresa la cantidad de dormitorios");
+    }
 }
 
 // Ingreso de Baños
@@ -151,6 +185,11 @@ function ingresarbanos(){
     while (isNaN(banos)) 
     {
         noTexto()
+        banos = prompt("Ingresa la cantidad de baños");
+    }
+    while (banos>(ambientes-dormitorios)) 
+    {
+        datoIncorrecto()
         banos = prompt("Ingresa la cantidad de baños");
     }
 }
@@ -180,34 +219,46 @@ function ingresarNotas(){
     notas = prompt("Ingresa detalles extras que creas pertinentes");
 }
 
-function opcionMostrar(){    
-    
-    let respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
-    
-    while (
-
-        respuesta != "SI" &&
-        
-        respuesta != "NO" &&
-        
-        respuesta != "S" &&
-        
-        respuesta != "N"
-        
-        ){
-        alert("Respuesta Incorrecta. Seleccione SI o NO")
-        respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase;
-    }
-    if (respuesta == "SI" || respuesta === "S"  ){
-        mostrarDatos()
-        }
-    else if (respuesta === "NO" || respuesta === "N" ){
-        noMostrarDatos()
-        } 
-    else {
-        alert("Respuesta Incorrecta. Seleccione SI o NO")
+function opcionMostrar(){ 
+    let respuesta = ""
+  while (respuesta) {
         respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
-        }
+            if ((respuesta === "SI") || (respuesta === "S"  )){
+                mostrarDatos()
+                }
+            else if ((respuesta === "NO") || (respuesta ==="N")) {
+                noMostrarDatos()
+                } 
+            else {
+                datoIncorrecto()
+            }
+    }
+    
+    
+    // while (
+
+    //     (respuesta != "SI") &&
+        
+    //     (respuesta != "NO") &&
+        
+    //     (respuesta != "S") &&
+        
+    //     (respuesta != "N")
+        
+    //     ){
+    //     alert("Respuesta Incorrecta. Seleccione SI o NO")
+    //     respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase;
+    //     }
+    // if (respuesta === "SI" || respuesta === "S"  ){
+    //     mostrarDatos()
+    //     }
+    // else if (respuesta === "NO" || respuesta === "N" ){
+    //     noMostrarDatos()
+    //     } 
+    // else {
+    //     alert("Respuesta Incorrecta. Seleccione SI o NO")
+    //     respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
+    //     }
     
     }  
 
