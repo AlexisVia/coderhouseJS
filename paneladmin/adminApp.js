@@ -221,49 +221,34 @@ function ingresarNotas(){
 
 function opcionMostrar(){ 
     let respuesta = ""
-  while (respuesta) {
-        respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
-            if ((respuesta === "SI") || (respuesta === "S"  )){
+    respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();          
+        while (
+            (respuesta != "SI") &&
+                    
+            (respuesta != "NO") &&
+                    
+            (respuesta != "S") &&
+                    
+            (respuesta != "N")
+                    
+            )
+            {
+                alert("Respuesta Incorrecta. Seleccione SI o NO")
+                respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
+            }
+            if (respuesta === "SI" || respuesta === "S")         
+            {
                 mostrarDatos()
                 }
-            else if ((respuesta === "NO") || (respuesta ==="N")) {
+            else
+            {
                 noMostrarDatos()
-                } 
-            else {
-                datoIncorrecto()
-            }
-    }
-    
-    
-    // while (
-
-    //     (respuesta != "SI") &&
-        
-    //     (respuesta != "NO") &&
-        
-    //     (respuesta != "S") &&
-        
-    //     (respuesta != "N")
-        
-    //     ){
-    //     alert("Respuesta Incorrecta. Seleccione SI o NO")
-    //     respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase;
-    //     }
-    // if (respuesta === "SI" || respuesta === "S"  ){
-    //     mostrarDatos()
-    //     }
-    // else if (respuesta === "NO" || respuesta === "N" ){
-    //     noMostrarDatos()
-    //     } 
-    // else {
-    //     alert("Respuesta Incorrecta. Seleccione SI o NO")
-    //     respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
-    //     }
-    
+                }
+            alert("Gracias por utilizar nuestros servicios")
     }  
 
 
-// Ingreso de datos generales para el inicio del programa
+// Ingreso de datos generales para el inicio del programa + llamada a funciones
 function ingresarDatos(){
     usuario = prompt("Ingresa tu nombre de usuario");
     while (!isNaN(usuario)) 
