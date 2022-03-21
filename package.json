@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/alexisviazzo/coderhouseJS#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.0",
     "lite-server": "^2.6.1"
   }
 }

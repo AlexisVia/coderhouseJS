@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+* {
+	margin: 0; padding: 0;
+}
+
+.center{
+    margin: auto !important;
+}
+
+/* Clase .contenido en Banner */
+.contenido{
+    padding: 50px 50px 100px 50px;
+    background-color: rgb(0, 0, 0, 0.35);
+}
+.contenido h5{
+    color: #ffff;
+    font-family:'Roboto', sans-serif; 
+    font-size: 50px;
+}
+.contenido h6{
+    color: rgb(0, 255, 213);
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 60px;
+}
+.contenido p{
+    color: #ffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+}
+
+
+/* Clase .propiedades */
+.propiedades{
+    padding: 50px 0px 10px 0px;
+}
+.propiedades h2 {
+    text-align: center;
+    color: #00618A;
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.propiedades h3 {
+    text-align: center;
+    color: #000000;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.propiedades label{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    text-align: left;
+}
+
+/* Clase .card-css */
+.card-css{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px
+}
+.card-css li{
+    margin-left: 10px;
+    color: black
+}
+
+.card-css h5{
+    font-size: 25px;
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+.card-css p{
+    font-size: 15px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+/* Clase .content-card */
+.content-card{
+   margin: 10px 10px 10px 10px 
+}
+.content-card i{
+    color: #00618A
+}
+.content-card span{
+    color: #dbd800
+}
+.card-body{
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
