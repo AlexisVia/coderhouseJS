@@ -35,11 +35,41 @@ function noTexto()
 }
 function mostrarDatos(){
     alert("En el dia "+dia+"/"+mes+"/"+year+" el usuario " +usuario+" le ha asignado al operador inmobiliario "+operadorInmobiliario+" quien tiene como telefono de contacto "+telContacto+" al propietario "+propietario+" quien posee una propiedad ubicada en "+direccion+" con una superficie total de "+superficieTotal+" mts2 y un area privada de "+areaPrivada+" mts2. Cuenta con "+dormitorios+" dormitorios, "+banos+" baños, y una antiguedad de "+antiguedad+" años. El valor de los gastos comunes es de $ "+gastosComunes+" Para esta propiedad el usuario ha agregado las siguientes notas: "+notas)
-    alert("Hasta pronto "+usuario+" que tengas buen dia")
+    volverInicializar()
+    
 }
 
 function noMostrarDatos(){
-    alert("Hasta pronto "+usuario+" que tengas buen dia")
+    volverInicializar()
+}
+
+function volverInicializar(){
+    let respuesta = ""
+    respuesta = prompt("Desea agregar una nueva propiedad? SI / NO").toUpperCase();          
+        while (
+            (respuesta != "SI") &&
+                    
+            (respuesta != "NO") &&
+                    
+            (respuesta != "S") &&
+                    
+            (respuesta != "N")
+                    
+            )
+            {
+                alert("Respuesta Incorrecta. Seleccione SI o NO")
+                respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
+            }
+            if (respuesta === "SI" || respuesta === "S")         
+            {
+                clicParaIngresarDatos()
+                }
+            else
+            {
+                return
+                
+                }
+            
 }
 
 // Ingreso de nombre de operador inmobiliario
@@ -217,36 +247,7 @@ function ingresarGastosComunes(){
 // Ingreso de Detalles Extras
 function ingresarNotas(){
     notas = prompt("Ingresa detalles extras que creas pertinentes");
-}
-
-function opcionMostrar(){ 
-    let respuesta = ""
-    respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();          
-        while (
-            (respuesta != "SI") &&
-                    
-            (respuesta != "NO") &&
-                    
-            (respuesta != "S") &&
-                    
-            (respuesta != "N")
-                    
-            )
-            {
-                alert("Respuesta Incorrecta. Seleccione SI o NO")
-                respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
-            }
-            if (respuesta === "SI" || respuesta === "S")         
-            {
-                mostrarDatos()
-                }
-            else
-            {
-                noMostrarDatos()
-                }
-            alert("Gracias por utilizar nuestros servicios")
-    }  
-
+} 
 
 // Ingreso de datos generales para el inicio del programa + llamada a funciones
 function ingresarDatos(){
@@ -276,15 +277,75 @@ function ingresarDatos(){
 } 
 
 
- 
-    
-   
-    
-    
-
-
 //La idea a futuro sera que la funcion de INGRESAR datos se active con un clik en un boton
-ingresarDatos()
+function clicParaIngresarDatos(){
+    ingresarDatos()
+llamadaConstructor()
+}
 
 
+//Constructor del Objeto Propiedad
 
+//Declaracion
+
+function llamadaConstructor(){
+    class Propiedad{ 
+        constructor(dia, mes, year, direccion, usuario, operadorInmobiliario, telContacto, propietario, superficieTotal, areaPrivada, ambientes, dormitorios, banos, antiguedad, gastosComunes, notas){ 
+            this.dia = dia, 
+            this.mes = mes,
+            this.year = year,
+            this.direccion = direccion,
+            this.usuario = usuario, 
+            this.operadorInmobiliario = operadorInmobiliario,
+            this.telContacto = telContacto,
+            this.propietario = propietario,
+            this.superficieTotal = superficieTotal, 
+            this.areaPrivada = areaPrivada,
+            this.ambientes = ambientes,
+            this.dormitorios = dormitorios,
+            this.banos = banos,
+            this.antiguedad = antiguedad,
+            this.gastosComunes = gastosComunes,
+            this.notas = notas
+        }
+    }
+    const propiedad = new Propiedad(dia, mes, year, direccion, usuario, operadorInmobiliario, telContacto, propietario, superficieTotal, areaPrivada, ambientes, dormitorios, banos, antiguedad, gastosComunes, notas)
+    ListadoPropiedades.push(propiedad)
+}
+
+//Array con todas las propiedades
+
+const ListadoPropiedades = []
+console.log(ListadoPropiedades)
+
+//Llamado a funcion para el inicio del Programa
+clicParaIngresarDatos()
+
+function opcionMostrar(){ 
+    let respuesta = ""
+    respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();          
+        while (
+            (respuesta != "SI") &&
+                    
+            (respuesta != "NO") &&
+                    
+            (respuesta != "S") &&
+                    
+            (respuesta != "N")
+                    
+            )
+            {
+                alert("Respuesta Incorrecta. Seleccione SI o NO")
+                respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
+            }
+            if (respuesta === "SI" || respuesta === "S")         
+            {
+                mostrarDatos()
+                }
+            else
+            {
+                noMostrarDatos()
+                }
+            alert("Gracias por utilizar nuestros servicios")       
+    } 
+    
