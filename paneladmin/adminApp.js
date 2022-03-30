@@ -40,21 +40,8 @@ class Propiedad{
         this.antiguedad = antiguedad,
         this.gastosComunes = gastosComunes,
         this.notas = notas
-        const propiedad = new Propiedad(dia, mes, year, direccion, usuario, operadorInmobiliario, telContacto, propietario, superficieTotal, areaPrivada, ambientes, dormitorios, banos, antiguedad, gastosComunes, notas)
-        ListadoPropiedades.push(propiedad)
     }  
 }
-
-
-// My Global Function
-function mostrarDatos(){
-    alert("En el dia "+dia+"/"+mes+"/"+year+" el usuario " +usuario+" le ha asignado al operador inmobiliario "+operadorInmobiliario+" quien tiene como telefono de contacto "+telContacto+" al propietario "+propietario+" quien posee una propiedad ubicada en "+direccion+" con una superficie total de "+superficieTotal+" mts2 y un area privada de "+areaPrivada+" mts2. Cuenta con "+dormitorios+" dormitorios, "+banos+" baños, y una antiguedad de "+antiguedad+" años. El valor de los gastos comunes es de $ "+gastosComunes+" Para esta propiedad el usuario ha agregado las siguientes notas: "+notas)
-    volverInicializar()   
-}
-function noMostrarDatos(){
-    volverInicializar()
-}
-
 
 // Ingreso de fecha
 function ingresarDia(){
@@ -108,8 +95,6 @@ function ingresarOperadorInmobiliario(){
         operadorInmobiliario = prompt("Ingresa el nombre del operador inmobiliario asignado");
     }
 }
-
-
 
 // Ingreso de telefono de contacto de operador inmobiliario
 function ingresarTelContacto(){
@@ -257,11 +242,15 @@ function ingresarDatos(){
     opcionMostrar()
 }
 
-//****************************Llamado a funcion para el inicio del Programa**********************************************
+
+
+//****************************Llamado a funcion para INGRESAR DATOS Y  CREAR EL OBJETO (el inicio del Programa)**********************************************
+//Dentro de esta funcion ya corre la de MOSTRAR por alerta y consola los datos ingresados
 ingresarDatos()
 //****************************Llamado a funcion para el inicio del Programa**********************************************
 
-
+const propiedad = new Propiedad(propiedad.length + 1, dia, mes, year, direccion, usuario, operadorInmobiliario, telContacto, propietario, superficieTotal, areaPrivada, ambientes, dormitorios, banos, antiguedad, gastosComunes, notas);
+ListadoPropiedades.push(propiedad)
 
 function opcionMostrar(){ 
     let respuesta = ""
@@ -282,13 +271,13 @@ function opcionMostrar(){
             }
             if (respuesta === "SI" || respuesta === "S")         
             {
-                mostrarDatos()
+                alert("En el dia "+dia+"/"+mes+"/"+year+" el usuario " +usuario+" le ha asignado al operador inmobiliario "+operadorInmobiliario+" quien tiene como telefono de contacto "+telContacto+" al propietario "+propietario+" quien posee una propiedad ubicada en "+direccion+" con una superficie total de "+superficieTotal+" mts2 y un area privada de "+areaPrivada+" mts2. Cuenta con "+dormitorios+" dormitorios, "+banos+" baños, y una antiguedad de "+antiguedad+" años. El valor de los gastos comunes es de $ "+gastosComunes+" Para esta propiedad el usuario ha agregado las siguientes notas: "+notas)
+                volverInicializar() 
                 }
             else
             {
-                noMostrarDatos()
-                }
-            alert("Gracias por utilizar nuestros servicios")       
+                volverInicializar()
+                }      
     } 
 
 function volverInicializar(){
@@ -313,9 +302,16 @@ function volverInicializar(){
                 ingresarDatos()
                 }
             else
-            {
-                return
-                    
-                }                               
-                
+            {alert("Gracias por utilizar nuestros servicios") 
+                return                    
+                }                                
     }
+
+
+    
+
+    // Leer - una function para leer mi array de objetos - imprimir en consola o alert
+
+    // Actualizar- otra function para actualizar mi array de objetos, que me van a mandar algo para cambiar en alguno de los objetos de mi array
+
+    // Eliminar - una function para eliminar ese objeto que me envian
