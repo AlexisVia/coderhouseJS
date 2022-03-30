@@ -23,15 +23,15 @@ console.log(ListadoPropiedades)
 //Constructor del Objeto Propiedad
 
 class Propiedad{ 
-    constructor(dia, mes, year, direccion, usuario, operadorInmobiliario, telContacto, propietario, superficieTotal, areaPrivada, ambientes, dormitorios, banos, antiguedad, gastosComunes, notas){ 
+    constructor(usuario, dia, mes, year, operadorInmobiliario, telContacto, propietario, direccion, superficieTotal, areaPrivada, ambientes, dormitorios, banos, antiguedad, gastosComunes, notas){ 
+        this.usuario = usuario, 
         this.dia = dia, 
         this.mes = mes,
         this.year = year,
-        this.direccion = direccion,
-        this.usuario = usuario, 
         this.operadorInmobiliario = operadorInmobiliario,
         this.telContacto = telContacto,
         this.propietario = propietario,
+        this.direccion = direccion,
         this.superficieTotal = superficieTotal, 
         this.areaPrivada = areaPrivada,
         this.ambientes = ambientes,
@@ -42,276 +42,231 @@ class Propiedad{
         this.notas = notas
     }  
 }
+new Propiedad
 
+
+// Ingreso de datos generales para el inicio del programa
+function nuevaPropiedad(){
+//Ingreso Usuario
+    let usuarioIngresado = prompt("Ingresa tu nombre de usuario");
+    while (!isNaN(usuarioIngresado)) 
+    {
+        alert("No se admiten Numeros. Intenta Nuevamente")
+        usuarioIngresado = prompt("Ingresa tu nombre de usuario");
+    }
+    alert("Bienvenido " + usuarioIngresado + " Por favor, completa los siguientes datos de la propiedad");
+    
 // Ingreso de fecha
-function ingresarDia(){
-    dia = parseInt(prompt("Ingresa el dia"));
-    while (isNaN(dia)) 
+    let diaIngresado = parseInt(prompt("Ingresa el dia"));
+    while (isNaN(diaIngresado)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        dia = prompt("Ingresa el mes");
+        diaIngresado = prompt("Ingresa el mes");
     }
-    while (dia>31 || dia<=0)
+    while (diaIngresado>31 || diaIngresado<=0)
     {
         alert("El dato ingresado no es correcto. Intenta Nuevamente")
         dia = prompt("Ingresa el dia");
     }
-    return
-}
-function ingresarMes(){
-    mes = parseInt(prompt("Ingresa el mes"));
-    while (isNaN(mes)) 
+
+    let mesIngresado = parseInt(prompt("Ingresa el mes"));
+    while (isNaN(mesIngresado)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        mes = prompt("Ingresa el mes");
+        mesIngresado = prompt("Ingresa el mes");
     }
-    while (mes>12 || mes<=0)
+    while (mesIngresado>12 || mesIngresado<=0)
     {
         alert("El dato ingresado no es correcto. Intenta Nuevamente")
-        mes = prompt("Ingresa el mes");
+        mesIngresado = prompt("Ingresa el mes");
     }
-    return
-}
-function ingresarYear(){
-    year = parseInt(prompt("Ingresa el año"));
-    while (isNaN(year)) 
+
+    let yearIngresado = parseInt(prompt("Ingresa el año"));
+    while (isNaN(yearIngresado)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        year = prompt("Ingresa el año");
+        yearIngresado = prompt("Ingresa el año");
     }
-    while (year<2022)
+    while (yearIngresado<2022)
     {
         alert("El dato ingresado no es correcto. Intenta Nuevamente")
-        year = prompt("Ingresa el año");
+        yearIngresado = prompt("Ingresa el año");
     }
-    return
-}
+
 // Ingreso de nombre de operador inmobiliario
-function ingresarOperadorInmobiliario(){
-    operadorInmobiliario = prompt("Ingresa el nombre del operador inmobiliario asignado");
-    while (!isNaN(operadorInmobiliario)) 
+
+let operadorInmobiliarioIngresado = prompt("Ingresa el nombre del operador inmobiliario asignado");
+    while (!isNaN(operadorInmobiliarioIngresado)) 
     {
         alert("No se admiten Numeros. Intenta Nuevamente")
-        operadorInmobiliario = prompt("Ingresa el nombre del operador inmobiliario asignado");
+        operadorInmobiliarioIngresado = prompt("Ingresa el nombre del operador inmobiliario asignado");
     }
-}
 
 // Ingreso de telefono de contacto de operador inmobiliario
-function ingresarTelContacto(){
-    telContacto = parseInt(prompt("Ingresa el telefono de contacto del operador inmobiliario asignado"));
-    while (isNaN(telContacto)) 
+    let telContactoIngresado = parseInt(prompt("Ingresa el telefono de contacto del operador inmobiliario asignado"));
+    while (isNaN(telContactoIngresado)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        telContacto = prompt("Ingresa el telefono de contacto del operador inmobiliario asignado");
+        telContactoIngresado = prompt("Ingresa el telefono de contacto del operador inmobiliario asignado");
     }
-    while (telContacto<091000000 || telContacto>099999999) 
+    while (telContactoIngresado<091000000 || telContactoIngresado>099999999) 
     {
         alert("El dato ingresado no es correcto. Intenta Nuevamente")
-        telContacto = prompt("Ingresa el telefono de contacto del operador inmobiliario asignado");
+        telContactoIngresado = prompt("Ingresa el telefono de contacto del operador inmobiliario asignado");
     }
-}
 
 // Ingreso del nombre del propietario
-function ingresarPropietario(){
-    propietario = prompt("Ingresa el nombre del propietario");
-    while (!isNaN(propietario)) 
+    let propietarioIngresado = prompt("Ingresa el nombre del propietario");
+    while (!isNaN(propietarioIngresado)) 
     {
         alert("No se admiten Numeros. Intenta Nuevamente")
-        propietario = prompt("Ingresa el nombre del propietario");
+        propietarioIngresado = prompt("Ingresa el nombre del propietario");
     }
-}
 
 // Ingreso de la dirreccion de la propiedad
-function ingresarDireccion(){
-    direccion = prompt("Ingresa la direccion de la propiedad");
-}
+    let direccionINgresada = prompt("Ingresa la direccion de la propiedad");
 
 // Ingreso de Superficie Total de la Propiedad
-function ingresarSuperficieTotal(){
-    superficieTotal = parseInt(prompt("Ingresa la superficie total de la propiedad en m2"));
-    while (isNaN(superficieTotal)) 
+
+    let superficieTotalIngresada = parseInt(prompt("Ingresa la superficie total de la propiedad en m2"));
+    while (isNaN(superficieTotalIngresada)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        superficieTotal = prompt("Ingresa la superficie total de la propiedad en m2");
+        superficieTotalIngresada = prompt("Ingresa la superficie total de la propiedad en m2");
     }
-}
 
 // Ingreso de Area Privada
-function ingresarAreaPrivada(){
-    areaPrivada = parseInt(prompt("Ingresa la superficie de area privada en m2"));
-    while (isNaN(areaPrivada)) 
+    let areaPrivadaIngresada = parseInt(prompt("Ingresa la superficie de area privada en m2"));
+    while (isNaN(areaPrivadaIngresada)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        areaPrivada = prompt("Ingresa la superficie de area privada en m2");
+        areaPrivadaIngresada = prompt("Ingresa la superficie de area privada en m2");
     }
-    while (areaPrivada>superficieTotal) 
+    while (areaPrivadaIngresada>superficieTotalIngresada) 
     {
         alert("El dato ingresado no es correcto. Intenta Nuevamente")
-        areaPrivada = prompt("Ingresa la superficie de area privada en m2");
+        areaPrivadaIngresada = prompt("Ingresa la superficie de area privada en m2");
     }
-}
+
 // Ingreso de Ambientes
-function ingresarAmbientes(){
-    ambientes = parseInt(prompt("Ingresa la cantidad de ambientes"));
-    while (isNaN(ambientes)) 
+    let ambientesIngresados = parseInt(prompt("Ingresa la cantidad de ambientes"));
+    while (isNaN(ambientesIngresados)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        ambientes = prompt("Ingresa la cantidad de ambientes");
+        ambientesIngresados = prompt("Ingresa la cantidad de ambientes");
     }
-}
 
 // Ingreso de Dormitorios
-function ingresarDormitorios(){
-    dormitorios = parseInt(prompt("Ingresa la cantidad de dormitorios"));
-    while (isNaN(dormitorios)) 
+    let dormitoriosIngresados = parseInt(prompt("Ingresa la cantidad de dormitorios"));
+    while (isNaN(dormitoriosIngresados)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        dormitorios = prompt("Ingresa la cantidad de dormitorios");
+        dormitoriosIngresados = prompt("Ingresa la cantidad de dormitorios");
     }
-    while (dormitorios>ambientes) 
+    while (dormitoriosIngresados>ambientesIngresados) 
     {
         alert("El dato ingresado no es correcto. Intenta Nuevamente")
-        dormitorios = prompt("Ingresa la cantidad de dormitorios");
+        dormitoriosIngresados = prompt("Ingresa la cantidad de dormitorios");
     }
-}
 
 // Ingreso de Baños
-function ingresarbanos(){
-    banos = parseInt(prompt("Ingresa la cantidad de baños"));
-    while (isNaN(banos)) 
+    let banosIngresados = parseInt(prompt("Ingresa la cantidad de baños"));
+    while (isNaN(banosIngresados)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        banos = prompt("Ingresa la cantidad de baños");
+        banosIngresados = prompt("Ingresa la cantidad de baños");
     }
-    while (banos>(ambientes-dormitorios)) 
+    while (banosIngresados>(ambientesIngresados-dormitoriosIngresados)) 
     {
         alert("El dato ingresado no es correcto. Intenta Nuevamente")
-        banos = prompt("Ingresa la cantidad de baños");
+        banosIngresados = prompt("Ingresa la cantidad de baños");
     }
-}
 
 // Ingreso de Antiguedad
-function ingresarAntiguedad(){
-    antiguedad = parseInt(prompt("Ingresa la cantidad de años de antiguedad"));
-    while (isNaN(antiguedad)) 
+    let antiguedadIngresada = parseInt(prompt("Ingresa la cantidad de años de antiguedad"));
+    while (isNaN(antiguedadIngresada)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        antiguedad = prompt("Ingresa la cantidad de años de antiguedad");
+        antiguedadIngresada = prompt("Ingresa la cantidad de años de antiguedad");
     }
-}
+
 
 // Ingreso de Gastos Comunes
-function ingresarGastosComunes(){
-    gastosComunes = parseInt(prompt("Ingresa el costo de los gastos comunes"));
-    while (isNaN(gastosComunes)) 
+    let gastoscomunesIngresados = parseInt(prompt("Ingresa el costo de los gastos comunes"));
+    while (isNaN(gastoscomunesIngresados)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        gastosComunes = prompt("Ingresa el costo de los gastos comunes");
+        gastoscomunesIngresados = prompt("Ingresa el costo de los gastos comunes");
     }
-}
 
 // Ingreso de Detalles Extras
-function ingresarNotas(){
-    notas = prompt("Ingresa detalles extras que creas pertinentes");
-} 
+    let notasIngresadas = prompt("Ingresa detalles extras que creas pertinentes");
 
-// Ingreso de datos generales para el inicio del programa + llamada a funciones
-function ingresarDatos(){
-    usuario = prompt("Ingresa tu nombre de usuario");
-    while (!isNaN(usuario)) 
-    {
-        noNumeros()
-        usuario = prompt("Ingresa tu nombre de usuario");
-    }
-    alert("Bienvenido " + usuario + " Por favor, completa los siguientes datos de la propiedad");
-    ingresarDia()
-    ingresarMes()
-    ingresarYear()
-    ingresarOperadorInmobiliario()
-    ingresarTelContacto()
-    ingresarPropietario()
-    ingresarDireccion()
-    ingresarSuperficieTotal()
-    ingresarAreaPrivada()
-    ingresarAmbientes()
-    ingresarDormitorios()
-    ingresarbanos()
-    ingresarAntiguedad()
-    ingresarGastosComunes()
-    ingresarNotas()
+    let nuevaPropiedad = new Propiedad(usuarioIngresado, diaIngresado,mesIngresado, yearIngresado,operadorInmobiliarioIngresado,telContactoIngresado,propietarioIngresado,direccionINgresada,superficieTotalIngresada,areaPrivadaIngresada,ambientesIngresados,dormitoriosIngresados,banosIngresados,antiguedadIngresada,gastoscomunesIngresados,notasIngresadas)
+    ListadoPropiedades.push(Propiedad)
+    console.log(nuevaPropiedad)
     opcionMostrar()
+    function opcionMostrar(){ 
+        let respuesta = ""
+        respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();          
+            while (
+                (respuesta != "SI") &&
+                        
+                (respuesta != "NO") &&
+                        
+                (respuesta != "S") &&
+                        
+                (respuesta != "N")
+                        
+                )
+                {
+                    alert("Respuesta Incorrecta. Seleccione SI o NO")
+                    respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
+                }
+                if (respuesta === "SI" || respuesta === "S")         
+                {
+                    alert("En el dia "+diaIngresado+"/"+mesIngresado+"/"+yearIngresado+" el usuario " +usuarioIngresado+" le ha asignado al operador inmobiliario "+operadorInmobiliarioIngresado+" quien tiene como telefono de contacto "+telContactoIngresado+" al propietario "+propietarioIngresado+" quien posee una propiedad ubicada en "+direccionINgresada+" con una superficie total de "+superficieTotalIngresada+" mts2 y un area privada de "+areaPrivadaIngresada+" mts2. Cuenta con "+dormitoriosIngresados+" dormitorios, "+banosIngresados+" baños, y una antiguedad de "+antiguedadIngresada+" años. El valor de los gastos comunes es de $ "+gastoscomunesIngresados+" Para esta propiedad el usuario ha agregado las siguientes notas: "+notasIngresadas)
+                    volverInicializar() 
+                    }
+                else
+                {
+                    volverInicializar()
+                    }      
+        } 
 }
+    function volverInicializar(){
+        let respuesta = ""
+        respuesta = prompt("Desea agregar una nueva propiedad? SI / NO").toUpperCase();          
+            while (
+                (respuesta != "SI") &&
+                            
+                (respuesta != "NO") &&
+                            
+                (respuesta != "S") &&
+                            
+                (respuesta != "N")
+                            
+                )
+                {
+                    alert("Respuesta Incorrecta. Seleccione SI o NO")
+                    respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
+                }
+                if (respuesta === "SI" || respuesta === "S")         
+                {
+                    nuevaPropiedad()
+                    }
+                else
+                {alert("Gracias por utilizar nuestros servicios") 
+                    return                    
+                    }                                
+        }
+    
+
 
 
 
 //****************************Llamado a funcion para INGRESAR DATOS Y  CREAR EL OBJETO (el inicio del Programa)**********************************************
 //Dentro de esta funcion ya corre la de MOSTRAR por alerta y consola los datos ingresados
-ingresarDatos()
+nuevaPropiedad()
 //****************************Llamado a funcion para el inicio del Programa**********************************************
 
-const propiedad = new Propiedad(propiedad.length + 1, dia, mes, year, direccion, usuario, operadorInmobiliario, telContacto, propietario, superficieTotal, areaPrivada, ambientes, dormitorios, banos, antiguedad, gastosComunes, notas);
-ListadoPropiedades.push(propiedad)
-
-function opcionMostrar(){ 
-    let respuesta = ""
-    respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();          
-        while (
-            (respuesta != "SI") &&
-                    
-            (respuesta != "NO") &&
-                    
-            (respuesta != "S") &&
-                    
-            (respuesta != "N")
-                    
-            )
-            {
-                alert("Respuesta Incorrecta. Seleccione SI o NO")
-                respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
-            }
-            if (respuesta === "SI" || respuesta === "S")         
-            {
-                alert("En el dia "+dia+"/"+mes+"/"+year+" el usuario " +usuario+" le ha asignado al operador inmobiliario "+operadorInmobiliario+" quien tiene como telefono de contacto "+telContacto+" al propietario "+propietario+" quien posee una propiedad ubicada en "+direccion+" con una superficie total de "+superficieTotal+" mts2 y un area privada de "+areaPrivada+" mts2. Cuenta con "+dormitorios+" dormitorios, "+banos+" baños, y una antiguedad de "+antiguedad+" años. El valor de los gastos comunes es de $ "+gastosComunes+" Para esta propiedad el usuario ha agregado las siguientes notas: "+notas)
-                volverInicializar() 
-                }
-            else
-            {
-                volverInicializar()
-                }      
-    } 
-
-function volverInicializar(){
-    let respuesta = ""
-    respuesta = prompt("Desea agregar una nueva propiedad? SI / NO").toUpperCase();          
-        while (
-            (respuesta != "SI") &&
-                        
-            (respuesta != "NO") &&
-                        
-            (respuesta != "S") &&
-                        
-            (respuesta != "N")
-                        
-            )
-            {
-                alert("Respuesta Incorrecta. Seleccione SI o NO")
-                respuesta = prompt("Desea comprobar los datos ingresados? SI / NO").toUpperCase();
-            }
-            if (respuesta === "SI" || respuesta === "S")         
-            {
-                ingresarDatos()
-                }
-            else
-            {alert("Gracias por utilizar nuestros servicios") 
-                return                    
-                }                                
-    }
-
-
-    
-
-    // Leer - una function para leer mi array de objetos - imprimir en consola o alert
-
-    // Actualizar- otra function para actualizar mi array de objetos, que me van a mandar algo para cambiar en alguno de los objetos de mi array
-
-    // Eliminar - una function para eliminar ese objeto que me envian
