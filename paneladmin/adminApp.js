@@ -225,6 +225,7 @@ let operadorInmobiliarioIngresado = prompt("Ingresa el nombre del operador inmob
                 }
                 if (respuesta === "SI" || respuesta === "S")         
                 {
+                    
                     alert("En el dia "+diaIngresado+"/"+mesIngresado+"/"+yearIngresado+" el usuario " +usuarioIngresado+" le ha asignado al operador inmobiliario "+operadorInmobiliarioIngresado+" quien tiene como telefono de contacto "+telContactoIngresado+" al propietario "+propietarioIngresado+" quien posee una propiedad ubicada en "+direccionINgresada+" con una superficie total de "+superficieTotalIngresada+" mts2 y un area privada de "+areaPrivadaIngresada+" mts2. Cuenta con "+dormitoriosIngresados+" dormitorios, "+banosIngresados+" baños, y una antiguedad de "+antiguedadIngresada+" años. El valor de los gastos comunes es de $ "+gastoscomunesIngresados+" Para esta propiedad el usuario ha agregado las siguientes notas: "+notasIngresadas)
                     volverInicializar() 
                     }
@@ -260,9 +261,6 @@ let operadorInmobiliarioIngresado = prompt("Ingresa el nombre del operador inmob
                     return                    
                     }                                
         }
-    
-
-
 
 
 //****************************Llamado a funcion para INGRESAR DATOS Y  CREAR EL OBJETO (el inicio del Programa)**********************************************
@@ -270,3 +268,10 @@ let operadorInmobiliarioIngresado = prompt("Ingresa el nombre del operador inmob
 nuevaPropiedad()
 //****************************Llamado a funcion para el inicio del Programa**********************************************
 
+function mostrar(){
+    busqueda = prompt("Ingrese el nombre del propietario")
+    const encontrados = ListadoPropiedades.filter(x => x.propietario == busqueda)
+    console.log(encontrados)
+
+}
+mostrar()
