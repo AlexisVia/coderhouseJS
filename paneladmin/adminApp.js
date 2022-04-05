@@ -268,10 +268,20 @@ let operadorInmobiliarioIngresado = prompt("Ingresa el nombre del operador inmob
 nuevaPropiedad()
 //****************************Llamado a funcion para el inicio del Programa**********************************************
 
+
+const MostrarListadoPropiedades = [
+
+    {id:1,dia:22,mes:2,year:2022,direccion:"Ruta 5",usuario:"Juan",operadorInmobiliario:"Jose",telContacto:094662649,propietario:"Pedro",superficieTotal:2000,areaPrivada:400,ambientes:6,dormitorios:2,banos:1,antiguedad:15,gastosComunes:4500,notas:"Frente a mar"},
+    {id:2,dia:21,mes:3,year:2022,direccion:"Ruta 2",usuario:"Julia",operadorInmobiliario:"Maria",telContacto:094662649,propietario:"Josefa",superficieTotal:200,areaPrivada:40,ambientes:6,dormitorios:2,banos:1,antiguedad:15,gastosComunes:4500,notas:"Frente a mar"},
+    {id:3,dia:20,mes:4,year:2022,direccion:"Ruta 1",usuario:"Marta",operadorInmobiliario:"Jose",telContacto:094662649,propietario:"Juan",superficieTotal:1000,areaPrivada:40,ambientes:4,dormitorios:2,banos:1,antiguedad:10,gastosComunes:450,notas:"Frente a ruta"},
+
+
+] 
 function mostrar(){
-    busqueda = prompt("Ingrese el nombre del propietario")
-    const encontrados = ListadoPropiedades.filter(x => x.propietario == busqueda)
-    console.log(encontrados)
+   
+busqueda = prompt("Ingrese la palabra a buscar")
+const encontrados = MostrarListadoPropiedades.filter(x => x.propietario == busqueda)
+console.log(encontrados)
 
 }
 mostrar()
