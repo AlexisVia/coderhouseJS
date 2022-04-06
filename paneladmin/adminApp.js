@@ -18,7 +18,6 @@ let notas = "notas"
 
 //Array con todas las propiedades
 const ListadoPropiedades = []
-console.log(ListadoPropiedades)
 
 //Constructor del Objeto Propiedad
 
@@ -103,11 +102,11 @@ let operadorInmobiliarioIngresado = prompt("Ingresa el nombre del operador inmob
     }
 
 // Ingreso de telefono de contacto de operador inmobiliario
-    let telContactoIngresado = parseInt(prompt("Ingresa el telefono de contacto del operador inmobiliario asignado"));
+    let telContactoIngresado = parseInt(prompt("Ingresa el telefono de contacto del operador inmobiliario asignado (Ej. 099123456)"));
     while (isNaN(telContactoIngresado)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        telContactoIngresado = prompt("Ingresa el telefono de contacto del operador inmobiliario asignado");
+        telContactoIngresado = prompt("Ingresa el telefono de contacto del operador inmobiliario asignado (Ej. 099123456)");
     }
     while (telContactoIngresado<091000000 || telContactoIngresado>099999999) 
     {
@@ -203,7 +202,7 @@ let operadorInmobiliarioIngresado = prompt("Ingresa el nombre del operador inmob
     let notasIngresadas = prompt("Ingresa detalles extras que creas pertinentes");
 
     let nuevaPropiedad = new Propiedad(usuarioIngresado, diaIngresado,mesIngresado, yearIngresado,operadorInmobiliarioIngresado,telContactoIngresado,propietarioIngresado,direccionINgresada,superficieTotalIngresada,areaPrivadaIngresada,ambientesIngresados,dormitoriosIngresados,banosIngresados,antiguedadIngresada,gastoscomunesIngresados,notasIngresadas)
-    ListadoPropiedades.push(Propiedad)
+    ListadoPropiedades.push(nuevaPropiedad)
     console.log(nuevaPropiedad)
     opcionMostrar()
     function opcionMostrar(){ 
@@ -227,12 +226,13 @@ let operadorInmobiliarioIngresado = prompt("Ingresa el nombre del operador inmob
                 {
                     
                     alert("En el dia "+diaIngresado+"/"+mesIngresado+"/"+yearIngresado+" el usuario " +usuarioIngresado+" le ha asignado al operador inmobiliario "+operadorInmobiliarioIngresado+" quien tiene como telefono de contacto "+telContactoIngresado+" al propietario "+propietarioIngresado+" quien posee una propiedad ubicada en "+direccionINgresada+" con una superficie total de "+superficieTotalIngresada+" mts2 y un area privada de "+areaPrivadaIngresada+" mts2. Cuenta con "+dormitoriosIngresados+" dormitorios, "+banosIngresados+" baños, y una antiguedad de "+antiguedadIngresada+" años. El valor de los gastos comunes es de $ "+gastoscomunesIngresados+" Para esta propiedad el usuario ha agregado las siguientes notas: "+notasIngresadas)
-                    volverInicializar() 
+                    // volverInicializar() 
                     }
                 else
                 {
                     volverInicializar()
-                    }      
+                    }
+          
         } 
 }
     function volverInicializar(){
@@ -261,27 +261,58 @@ let operadorInmobiliarioIngresado = prompt("Ingresa el nombre del operador inmob
                     return                    
                     }                                
         }
-
-
-//****************************Llamado a funcion para INGRESAR DATOS Y  CREAR EL OBJETO (el inicio del Programa)**********************************************
-//Dentro de esta funcion ya corre la de MOSTRAR por alerta y consola los datos ingresados
-nuevaPropiedad()
-//****************************Llamado a funcion para el inicio del Programa**********************************************
-
-
-const MostrarListadoPropiedades = [
-
-    {id:1,dia:22,mes:2,year:2022,direccion:"Ruta 5",usuario:"Juan",operadorInmobiliario:"Jose",telContacto:094662649,propietario:"Pedro",superficieTotal:2000,areaPrivada:400,ambientes:6,dormitorios:2,banos:1,antiguedad:15,gastosComunes:4500,notas:"Frente a mar"},
-    {id:2,dia:21,mes:3,year:2022,direccion:"Ruta 2",usuario:"Julia",operadorInmobiliario:"Maria",telContacto:094662649,propietario:"Josefa",superficieTotal:200,areaPrivada:40,ambientes:6,dormitorios:2,banos:1,antiguedad:15,gastosComunes:4500,notas:"Frente a mar"},
-    {id:3,dia:20,mes:4,year:2022,direccion:"Ruta 1",usuario:"Marta",operadorInmobiliario:"Jose",telContacto:094662649,propietario:"Juan",superficieTotal:1000,areaPrivada:40,ambientes:4,dormitorios:2,banos:1,antiguedad:10,gastosComunes:450,notas:"Frente a ruta"},
-
-
-] 
-function mostrar(){
-   
-busqueda = prompt("Ingrese la palabra a buscar")
-const encontrados = MostrarListadoPropiedades.filter(x => x.propietario == busqueda)
-console.log(encontrados)
-
+function filtrarPropiedad(){
+    busqueda = prompt("Ingrese la palabra a buscar")
+    const encontrados = ListadoPropiedades.filter(x => x.Propiedad == busqueda)
+    console.log(encontrados)
 }
-mostrar()
+
+
+//****************************Llamado a funcion para AGREGAR PROPIEDAD**********************************************
+//Dentro de esta funcion ya corre la opcion de MOSTRAR por alerta los ultimos datos ingresados
+function agregar(){
+    const agregar = document.getElementById("agregar");
+    agregar.onclick = () =>{nuevaPropiedad()}
+}
+//****************************Llamado a funcion para VER PROPIEDAD**********************************************
+// function mostrar(){
+//     const agregar = document.getElementById("ver");
+//     agregar.onclick = () =>{filtrarPropiedad()}   
+// }
+//****************************Llamado a funcion para VER PROPIEDAD**********************************************
+
+
+
+//****************************Llamado a funciones cargadas en el BODY**********************************************
+function loadBody(){
+    agregar()
+}
+ function renderPropiedad(){
+    const myTitle = document.getElementById("render");
+    myTitle.innerHTML = `Ha agregado la propiedad correctamente, en breve la vera aqui`}
+    renderPropiedad()
+
+//      container.innerHTML = <div class="card-css col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
+//      <div class="card content-card">
+//          <div class="card-body">
+//            <h5 class="card-title"><span></span></h5>
+//            <p class="card-text">Exelente Propiedad en `{direccion}`</p>
+//          </div>
+//          <ul class="list-group list-group-flush">
+//            <li class="list-group-item"><i class="fa-solid fa-circle-info"></i> Ref. 1</li>
+//            <li class="list-group-item"><span class="fa-solid fa-star"></span><span class="fa-solid fa-star"></span><span class="fa-solid fa-star"></span><span class="fa-solid fa-star"></span><span class="fa-solid fa-star"></span></li>
+//            <li class="list-group-item"><i class="fa-solid fa-house-chimney"></i> Operador Inmobiliario: <span id="operadorinmobiliario"></span></li>
+//            <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> Telefono :<span id="telefono"></span></li>
+//          </ul>
+//          <div class="card-body">
+//              <button type="button" class="btn btn-outline-primary"><a href="tel:094662649" class="card-link"></a>Contactar</button>
+//          </div>
+//        </div>
+//  </div>
+//  let spanUbicacion = document.getElementById("ubicacion")
+//  spanUbicacion.innerHTML = direccion
+//  let spanOperadorInmobiliario = document.getElementById("operadorinmobiliario")
+//  spanOperadorInmobiliario.innerHTML = operadorInmobiliario
+//  let spanTelefono = document.getElementById("telefono")
+//  spanTelefono.innerHTML = telContacto
+ 
