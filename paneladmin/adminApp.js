@@ -203,6 +203,7 @@ let operadorInmobiliarioIngresado = prompt("Ingresa el nombre del operador inmob
 
     let nuevaPropiedad = new Propiedad(usuarioIngresado, diaIngresado,mesIngresado, yearIngresado,operadorInmobiliarioIngresado,telContactoIngresado,propietarioIngresado,direccionINgresada,superficieTotalIngresada,areaPrivadaIngresada,ambientesIngresados,dormitoriosIngresados,banosIngresados,antiguedadIngresada,gastoscomunesIngresados,notasIngresadas)
     ListadoPropiedades.push(nuevaPropiedad)
+    render()
     console.log(nuevaPropiedad)
     opcionMostrar()
     function opcionMostrar(){ 
@@ -226,7 +227,7 @@ let operadorInmobiliarioIngresado = prompt("Ingresa el nombre del operador inmob
                 {
                     
                     alert("En el dia "+diaIngresado+"/"+mesIngresado+"/"+yearIngresado+" el usuario " +usuarioIngresado+" le ha asignado al operador inmobiliario "+operadorInmobiliarioIngresado+" quien tiene como telefono de contacto "+telContactoIngresado+" al propietario "+propietarioIngresado+" quien posee una propiedad ubicada en "+direccionINgresada+" con una superficie total de "+superficieTotalIngresada+" mts2 y un area privada de "+areaPrivadaIngresada+" mts2. Cuenta con "+dormitoriosIngresados+" dormitorios, "+banosIngresados+" baños, y una antiguedad de "+antiguedadIngresada+" años. El valor de los gastos comunes es de $ "+gastoscomunesIngresados+" Para esta propiedad el usuario ha agregado las siguientes notas: "+notasIngresadas)
-                    // volverInicializar() 
+                    
                     }
                 else
                 {
@@ -267,6 +268,14 @@ function filtrarPropiedad(){
     console.log(encontrados)
 }
 
+function render(){
+  const cargando = document.createElement("h2");
+  cargando.innerHTML = "<h2>LE INFORMAMOS QUE MUY PRONTO VERA AQUI SU PROPIEDAD</h2>";
+document.body.append(cargando)
+}
+  
+
+
 
 //****************************Llamado a funcion para AGREGAR PROPIEDAD**********************************************
 //Dentro de esta funcion ya corre la opcion de MOSTRAR por alerta los ultimos datos ingresados
@@ -279,7 +288,7 @@ function agregar(){
 //     const agregar = document.getElementById("ver");
 //     agregar.onclick = () =>{filtrarPropiedad()}   
 // }
-//****************************Llamado a funcion para VER PROPIEDAD**********************************************
+//****************************Llamado a funcion para ELIMINAR PROPIEDAD**********************************************
 
 
 
@@ -287,32 +296,8 @@ function agregar(){
 function loadBody(){
     agregar()
 }
- function renderPropiedad(){
-    const myTitle = document.getElementById("render");
-    myTitle.innerHTML = `Ha agregado la propiedad correctamente, en breve la vera aqui`}
-    renderPropiedad()
 
-//      container.innerHTML = <div class="card-css col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
-//      <div class="card content-card">
-//          <div class="card-body">
-//            <h5 class="card-title"><span></span></h5>
-//            <p class="card-text">Exelente Propiedad en `{direccion}`</p>
-//          </div>
-//          <ul class="list-group list-group-flush">
-//            <li class="list-group-item"><i class="fa-solid fa-circle-info"></i> Ref. 1</li>
-//            <li class="list-group-item"><span class="fa-solid fa-star"></span><span class="fa-solid fa-star"></span><span class="fa-solid fa-star"></span><span class="fa-solid fa-star"></span><span class="fa-solid fa-star"></span></li>
-//            <li class="list-group-item"><i class="fa-solid fa-house-chimney"></i> Operador Inmobiliario: <span id="operadorinmobiliario"></span></li>
-//            <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> Telefono :<span id="telefono"></span></li>
-//          </ul>
-//          <div class="card-body">
-//              <button type="button" class="btn btn-outline-primary"><a href="tel:094662649" class="card-link"></a>Contactar</button>
-//          </div>
-//        </div>
-//  </div>
-//  let spanUbicacion = document.getElementById("ubicacion")
-//  spanUbicacion.innerHTML = direccion
-//  let spanOperadorInmobiliario = document.getElementById("operadorinmobiliario")
-//  spanOperadorInmobiliario.innerHTML = operadorInmobiliario
-//  let spanTelefono = document.getElementById("telefono")
-//  spanTelefono.innerHTML = telContacto
+
+
+
  
