@@ -40,7 +40,7 @@
                             <a class="nav-link px-lg-3 py-lg-4" href="#">Contacto Administrador</a> 
                         </li>                             
                     </ul>                         
-                    <a class="btn btn-light ms-lg-auto ps-4 pe-4 rounded-pill" href="paneladmin/adminApp.html">Cerrar Sesion</a> 
+                    <a class="btn btn-light ms-lg-auto ps-4 pe-4 rounded-pill" href="../index.html">Cerrar Sesion</a> 
                 </div>                     
             </div>                 
         </nav> 
@@ -52,11 +52,11 @@
         <h2>Aqui Podras Ver y Gestionar todas tus propiedades</h2>
         <div id="opcionesPanel" class="container pt-5"> 
             <div class="align-items-center row"> 
-                <div class="boton col-xs-12 col-sm-12 col-md-3 col-lg-3"> 
+                <div class="boton col-xs-12 col-sm-12 col-md-6 col-lg-3"> 
                     <h2 class="h5"></h2>
                      
                                    <!-- Button trigger modal -->
-                    <button id="agregar" type="button" class="btn btn-success">
+                    <button id="agregar" type="button" class="btn btn-success admin">
                         <i class="fa-solid fa-plus"></i> <n>AGREGAR PROPIEDAD</n>
                     </button>
                                 
@@ -105,10 +105,10 @@
                                 </div>
                             </div> -->
                         </div>
-                        <div class="boton col-xs-12 col-sm-12 col-md-3 col-lg-3"> 
+                        <div class="boton col-xs-12 col-sm-12 col-md-6 col-lg-3"> 
                             <h2 class="h5"></h2> 
                                            <!-- Button trigger modal -->
-                            <button id="ver"type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#opcionModal">
+                            <button id="ver"type="button" class="btn btn-info admin" data-bs-toggle="modal" data-bs-target="#opcionModal">
                                 <i class="fa-solid fa-house-chimney"></i> <n>VER PROPIEDAD</n>
                             </button>
                                         
@@ -160,10 +160,10 @@
                                         </div>
                                     </div> -->
                                 </div>
-                                <div class="boton col-xs-12 col-sm-12 col-md-3 col-lg-3"> 
+                                <div class="boton col-xs-12 col-sm-12 col-md-6 col-lg-3"> 
                                     <h2 class="h5"></h2> 
                                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#opcionModal">
+                                    <button type="button" class="btn btn-danger admin" data-bs-toggle="modal" data-bs-target="#opcionModal">
                                         <i class="fa-solid fa-delete-left"></i> <n>ELIMINAR PROPIEDAD</n>
                                     </button>
                                                 
@@ -215,10 +215,10 @@
                                                 </div>
                                             </div> -->
                                         </div>
-                                        <div class="boton col-xs-12 col-sm-12 col-md-3 col-lg-3"> 
+                                        <div class="boton col-xs-12 col-sm-12 col-md-6 col-lg-3"> 
                                             <h2 class="h5"></h2> 
                                                            <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#opcionModal">
+                                            <button type="button" class="btn btn-primary admin" data-bs-toggle="modal" data-bs-target="#opcionModal">
                                                 <i class="fa-solid fa-file-pen"></i> <n>ACTUALIZAR PROPIEDAD</n>
                                             </button>
                                                         
@@ -277,8 +277,7 @@
         </div>                         
     </section>
     <section>
-    <div>
-        <h2 id="render"></h2>
+    <div id="render">
     </div>
     </section>
 </body>

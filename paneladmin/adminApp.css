@@ -12,7 +12,7 @@ h2{
     padding-top: 10px;
 }
 
-button{
+.admin{
     width: 250px;
     min-height: 250px;
     border-radius: 40px !important;
@@ -25,3 +25,9 @@ button{
     padding: 10px !important;
     margin-top: 20px !important;
 }
+.card-body{
+    
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
