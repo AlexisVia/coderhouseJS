@@ -47,159 +47,160 @@ new Propiedad
 // Ingreso de datos generales para el inicio del programa
 function nuevaPropiedad(){
 //Ingreso Usuario
-    let usuarioIngresado = prompt("Ingresa tu nombre de usuario");
-    while (!isNaN(usuarioIngresado)) 
+    let usuarioIngresado = document.getElementById("usuario").value;
+    if (!isNaN(usuarioIngresado)) 
     {
-        alert("No se admiten Numeros. Intenta Nuevamente")
-        usuarioIngresado = prompt("Ingresa tu nombre de usuario");
+        let usuario = document.getElementById("usuarioLabel");
+        usuario.innerHTML = `<label>No se admiten numeros. Por favor intenta nuevamente</label>`;
+        usuarioIngresado = document.getElementById("usuario").value;
     }
-    alert("Bienvenido " + usuarioIngresado + " Por favor, completa los siguientes datos de la propiedad");
     
 // Ingreso de fecha
-    let diaIngresado = parseInt(prompt("Ingresa el dia"));
+    let diaIngresado = parseInt(document.getElementById("dia").value);
     while (isNaN(diaIngresado)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        diaIngresado = prompt("Ingresa el mes");
+        diaIngresado = parseInt(document.getElementById("dia").value);
     }
     while (diaIngresado>31 || diaIngresado<=0)
     {
         alert("El dato ingresado no es correcto. Intenta Nuevamente")
-        dia = prompt("Ingresa el dia");
+        diaIngresado = parseInt(document.getElementById("dia").value);
     }
 
-    let mesIngresado = parseInt(prompt("Ingresa el mes"));
+    let mesIngresado = parseInt(document.getElementById("mes").value);
     while (isNaN(mesIngresado)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        mesIngresado = prompt("Ingresa el mes");
+        mesIngresado = parseInt(document.getElementById("mes").value);
     }
     while (mesIngresado>12 || mesIngresado<=0)
     {
         alert("El dato ingresado no es correcto. Intenta Nuevamente")
-        mesIngresado = prompt("Ingresa el mes");
+        mesIngresado = parseInt(document.getElementById("mes").value);
     }
 
-    let yearIngresado = parseInt(prompt("Ingresa el año"));
+    let yearIngresado = parseInt(document.getElementById("anio").value);
     while (isNaN(yearIngresado)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        yearIngresado = prompt("Ingresa el año");
+        yearIngresado = parseInt(document.getElementById("anio").value);
     }
     while (yearIngresado<2022)
     {
         alert("El dato ingresado no es correcto. Intenta Nuevamente")
-        yearIngresado = prompt("Ingresa el año");
+        yearIngresado = parseInt(document.getElementById("anio").value);
     }
 
 // Ingreso de nombre de operador inmobiliario
 
-let operadorInmobiliarioIngresado = prompt("Ingresa el nombre del operador inmobiliario asignado");
+let operadorInmobiliarioIngresado = document.getElementById("opInmobiliario").value;
     while (!isNaN(operadorInmobiliarioIngresado)) 
     {
         alert("No se admiten Numeros. Intenta Nuevamente")
-        operadorInmobiliarioIngresado = prompt("Ingresa el nombre del operador inmobiliario asignado");
+        operadorInmobiliarioIngresado = document.getElementById("opInmobiliario").value;
     }
 
 // Ingreso de telefono de contacto de operador inmobiliario
-    let telContactoIngresado = parseInt(prompt("Ingresa el telefono de contacto del operador inmobiliario asignado (Ej. 099123456)"));
+    let telContactoIngresado = parseInt(document.getElementById("telContacto").value);
     while (isNaN(telContactoIngresado)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        telContactoIngresado = prompt("Ingresa el telefono de contacto del operador inmobiliario asignado (Ej. 099123456)");
+        telContactoIngresado = document.getElementById("telContacto").value;
     }
     while (telContactoIngresado<091000000 || telContactoIngresado>099999999) 
     {
         alert("El dato ingresado no es correcto. Intenta Nuevamente")
-        telContactoIngresado = prompt("Ingresa el telefono de contacto del operador inmobiliario asignado");
+        telContactoIngresado = document.getElementById("telContacto").value;
     }
 
 // Ingreso del nombre del propietario
-    let propietarioIngresado = prompt("Ingresa el nombre del propietario");
+    let propietarioIngresado = document.getElementById("propietario").value;
     while (!isNaN(propietarioIngresado)) 
     {
         alert("No se admiten Numeros. Intenta Nuevamente")
-        propietarioIngresado = prompt("Ingresa el nombre del propietario");
+        propietarioIngresado = document.getElementById("propietario").value;
     }
 
 // Ingreso de la dirreccion de la propiedad
-    let direccionINgresada = prompt("Ingresa la direccion de la propiedad");
+    let direccionINgresada = document.getElementById("direccion").value;
+
 
 // Ingreso de Superficie Total de la Propiedad
 
-    let superficieTotalIngresada = parseInt(prompt("Ingresa la superficie total de la propiedad en m2"));
+    let superficieTotalIngresada = parseInt(document.getElementById("supTotal").value);
     while (isNaN(superficieTotalIngresada)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        superficieTotalIngresada = prompt("Ingresa la superficie total de la propiedad en m2");
+        superficieTotalIngresada = parseInt(document.getElementById("supTotal").value)
     }
 
 // Ingreso de Area Privada
-    let areaPrivadaIngresada = parseInt(prompt("Ingresa la superficie de area privada en m2"));
+    let areaPrivadaIngresada = parseInt(document.getElementById("areaPrivada").value);
     while (isNaN(areaPrivadaIngresada)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        areaPrivadaIngresada = prompt("Ingresa la superficie de area privada en m2");
+        areaPrivadaIngresada = document.getElementById("areaPrivada").value;
     }
     while (areaPrivadaIngresada>superficieTotalIngresada) 
     {
         alert("El dato ingresado no es correcto. Intenta Nuevamente")
-        areaPrivadaIngresada = prompt("Ingresa la superficie de area privada en m2");
+        areaPrivadaIngresada = document.getElementById("areaPrivada").value;
     }
 
 // Ingreso de Ambientes
-    let ambientesIngresados = parseInt(prompt("Ingresa la cantidad de ambientes"));
+    let ambientesIngresados = parseInt(document.getElementById("ambientes").value);
     while (isNaN(ambientesIngresados)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        ambientesIngresados = prompt("Ingresa la cantidad de ambientes");
+        ambientesIngresados = parseInt(document.getElementById("ambientes").value);
     }
 
 // Ingreso de Dormitorios
-    let dormitoriosIngresados = parseInt(prompt("Ingresa la cantidad de dormitorios"));
+    let dormitoriosIngresados = parseInt(document.getElementById("dormitorios").value);
     while (isNaN(dormitoriosIngresados)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        dormitoriosIngresados = prompt("Ingresa la cantidad de dormitorios");
+        dormitoriosIngresados = parseInt(document.getElementById("dormitorios").value);
     }
     while (dormitoriosIngresados>ambientesIngresados) 
     {
         alert("El dato ingresado no es correcto. Intenta Nuevamente")
-        dormitoriosIngresados = prompt("Ingresa la cantidad de dormitorios");
+        dormitoriosIngresados = parseInt(document.getElementById("dormitorios").value);
     }
 
 // Ingreso de Baños
-    let banosIngresados = parseInt(prompt("Ingresa la cantidad de baños"));
+    let banosIngresados = parseInt(document.getElementById("banos").value);
     while (isNaN(banosIngresados)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        banosIngresados = prompt("Ingresa la cantidad de baños");
+        banosIngresados = document.getElementById("banos").value;
     }
     while (banosIngresados>(ambientesIngresados-dormitoriosIngresados)) 
     {
         alert("El dato ingresado no es correcto. Intenta Nuevamente")
-        banosIngresados = prompt("Ingresa la cantidad de baños");
+        banosIngresados = document.getElementById("banos").value;
     }
 
 // Ingreso de Antiguedad
-    let antiguedadIngresada = parseInt(prompt("Ingresa la cantidad de años de antiguedad"));
+    let antiguedadIngresada = parseInt(document.getElementById("antiguedad").value);
     while (isNaN(antiguedadIngresada)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        antiguedadIngresada = prompt("Ingresa la cantidad de años de antiguedad");
+        antiguedadIngresada = parseInt(document.getElementById("antiguedad").value);
     }
 
 
 // Ingreso de Gastos Comunes
-    let gastoscomunesIngresados = parseInt(prompt("Ingresa el costo de los gastos comunes"));
+    let gastoscomunesIngresados = parseInt(document.getElementById("gastosComunes").value);
     while (isNaN(gastoscomunesIngresados)) 
     {
         alert("Solo se admiten Numeros. Intenta Nuevamente")
-        gastoscomunesIngresados = prompt("Ingresa el costo de los gastos comunes");
+        gastoscomunesIngresados = parseInt(document.getElementById("gastosComunes").value);
     }
 
 // Ingreso de Detalles Extras
-    let notasIngresadas = prompt("Ingresa detalles extras que creas pertinentes");
+    let notasIngresadas = document.getElementById("notas").value;
 
     let nuevaPropiedad = new Propiedad(usuarioIngresado, diaIngresado,mesIngresado, yearIngresado,operadorInmobiliarioIngresado,telContactoIngresado,propietarioIngresado,direccionINgresada,superficieTotalIngresada,areaPrivadaIngresada,ambientesIngresados,dormitoriosIngresados,banosIngresados,antiguedadIngresada,gastoscomunesIngresados,notasIngresadas)
     ListadoPropiedades.push(nuevaPropiedad)
@@ -301,8 +302,8 @@ function filtrarPropiedad(){
 //****************************Llamado a funcion para AGREGAR PROPIEDAD**********************************************
 //Dentro de esta funcion ya corre la opcion de MOSTRAR por alerta los ultimos datos ingresados
 function agregar(){
-    const agregar = document.getElementById("agregar");
-    agregar.onclick = () =>{nuevaPropiedad()}
+    const guardarPropiedad = document.getElementById("guardarPropiedad");
+    guardarPropiedad.onclick = () =>{nuevaPropiedad()}
 }
 //****************************Llamado a funcion para VER PROPIEDAD**********************************************
 // function mostrar(){

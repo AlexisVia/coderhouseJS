@@ -30,4 +30,14 @@ h2{
     margin-left: auto !important;
     margin-right: auto !important;
 }
-
+  
+  /* Error para validacion de formulario de Agregar Propiedad */
+#error {
+    color: red;
+    text-align: center;
+    font-size: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+label {
+    color:red
+}
