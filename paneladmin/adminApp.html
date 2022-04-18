@@ -1,334 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="adminApp.css">
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../style.css" rel="stylesheet">
-    <link rel="stylesheet" href="../main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap" rel="stylesheet">   
-    <link rel="stylesheet" href="../font/Hurricane-Regular.ttf">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Panel Admininstrador de Inmobiliaria</title>
+	
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="estilos.css">
+	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <!-- <script src="../assets/js/popper.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script> -->
-    <script src="https://kit.fontawesome.com/2f82c9a7a9.js" crossorigin="anonymous"></script>
-<script src="adminApp.js"></script>
-    <title>Mi Panel Administrador</title>
+    
+	
 </head>
 <body onload="loadBody()">
-    <header>
-        <!-- Menu Navegacion -->
-        <nav class="bg-light order-bottom navbar  navbar-expand-lg fixed-top">  
-            <div class="container">
-                <a title="logo" href="index.html"><img src="../images/Logo.png" width="125" height="55"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown-4" aria-controls="navbarNavDropdown-4" aria-expanded="false" aria-label="Toggle navigation"> 
-                    <span class="navbar-toggler-icon"></span> 
-                </button>                     
-                <div class="collapse navbar-collapse " id="navbarNavDropdown-4"> 
-                    <ul class="navbar-nav"> 
-                        <li class="nav-item"> 
-                            <a class="nav-link px-lg-3 py-lg-4" href="#">Gestionar Propiedades</a> 
-                        </li>
-                        <li class="nav-item"> 
-                            <a class="nav-link px-lg-3 py-lg-4" href="#">Editar Web</a> 
-                        </li>                            
-                        <li class="nav-item"></li>                             
-                        <li class="nav-item"> 
-                            <a class="nav-link px-lg-3 py-lg-4" href="#">Contacto Administrador</a> 
-                        </li>                             
-                    </ul>                         
-                    <a class="btn btn-light ms-lg-auto ps-4 pe-4 rounded-pill" href="../index.html">Cerrar Sesion</a> 
-                </div>                     
-            </div>                 
-        </nav> 
-    </header> 
+<header>
+	<!-- Menu Navegacion -->
+	<nav class="bg-light order-bottom navbar  navbar-expand-lg fixed-top">  
+		<div class="container">
+			<a title="logo" href="index.html"><img src="../images/Logo.png" width="125" height="55"></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown-4" aria-controls="navbarNavDropdown-4" aria-expanded="false" aria-label="Toggle navigation"> 
+				<span class="navbar-toggler-icon"></span> 
+			</button>                     
+			<div class="collapse navbar-collapse " id="navbarNavDropdown-4"> 
+				<ul class="navbar-nav"> 
+					<li class="nav-item"> 
+						<a class="nav-link px-lg-3 py-lg-4" href="#">Gestionar Propiedades</a> 
+					</li>
+					<li class="nav-item"> 
+						<a class="nav-link px-lg-3 py-lg-4" href="#">Editar Web</a> 
+					</li>                            
+					<li class="nav-item"></li>                             
+					<li class="nav-item"> 
+						<a class="nav-link px-lg-3 py-lg-4" href="#">Contacto Administrador</a> 
+					</li>                             
+				</ul>                         
+				<a class="btn btn-light ms-lg-auto ps-4 pe-4 rounded-pill" href="../index.html">Cerrar Sesion</a> 
+			</div>                     
+		</div>                 
+	</nav> 
+</header> 
+	<main>
+		<form action="" class="formulario" id="formulario">
+			<!-- Grupo: Operador Inmobiliario -->
+			<div class="formulario__grupo" id="grupo__opInmobiliario">
+				<label for="usuario" class="formulario__label">Operador Inmobiliario Asignado</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="opInmobiliario" id="opInmobiliario" placeholder="Pedro Rodriguez" required>
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El nombre del operador inmobiliario solo puede contener numeros, letras y guion bajo.</p>
+			</div>
 
+			<!-- Grupo: Nombre Propietario-->
+			<div class="formulario__grupo" id="grupo__nombrePropietario">
+				<label for="nombrePropietario" class="formulario__label">Nombre</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="nombrePropietario" id="nombrePropietario" placeholder="Juan Perez" required>
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El nombre del propietario solo puede contener numeros, letras y guion bajo.</p>
+			</div>
 
-    <section id="panelDatos" class="bg-secondary text-center text-lg-start text-white">
-        <h1>Bienvenid@ a Tu Panel Administrador</h1>
-        <h2>Aqui Podras Ver y Gestionar todas tus propiedades</h2>
-        <div id="opcionesPanel" class="container pt-5"> 
-            <div class="align-items-center row"> 
-                <div class="boton col-xs-12 col-sm-12 col-md-6 col-lg-3"> 
-                    <h2 class="h5"></h2>
-                     
-                                   <!-- Button trigger modal -->
-                    <button id="agregar" type="button" class="btn btn-success admin" data-bs-toggle="modal" data-bs-target="#agregarPropiedad">
-                        <i class="fa-solid fa-plus"></i> <n>AGREGAR PROPIEDAD</n>
-                    </button>
-                                
-                                <!-- Modal -->
-                                <div class="modal fade" id="agregarPropiedad" tabindex="-1" aria-labelledby="agregarPropiedad" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h5 class="modal-title" style="color:black" id="exampleModalLabel">Nueva Propiedad</h5>
-                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form action="">
-                                                <div class="mb-3">
-                                                    <label for="fecha" class="form-label" id="usuarioLabel" aria-label="requiered"></label>
-                                                    <input type="fecha" class="form-control" id="usuario" placeholder="Mi nombre de usuario es...">
-                                                    <div id="error"></div>
-                                                  </div>
-                                                <div class="mb-3">
-                                                    <label for="fecha" class="form-label"></label>
-                                                    <input type="fecha" class="form-control" id="dia" placeholder="Del 1 al 31">
-                                                  </div>
-                                                <div class="mb-3">
-                                                    <label for="fecha" class="form-label"></label>
-                                                    <input type="fecha" class="form-control" id="mes" placeholder="Del 1 al 12">
-                                                  </div>
-                                                <div class="mb-3">
-                                                    <label for="fecha" class="form-label"></label>
-                                                    <input type="fecha" class="form-control" id="anio" placeholder="Del 2022 en adelante">
-                                                  </div>
-                                                <div class="mb-3">
-                                                    <label for="fecha" class="form-label"></label>
-                                                    <input type="fecha" class="form-control" id="direccion" placeholder="Ej. Calle 18 de Julio 2601">
-                                                  </div>
-                                                  <div class="mb-3">
-                                                    <label for="operadorInmobiliario" class="form-label"></label>
-                                                    <input type="operadorInmobilairio" class="form-control" id="opInmobiliario" placeholder="Ej. Juan Rodriguez">
-                                                  </div>
-                                                  <div class="mb-3">
-                                                    <label for="telContacto" class="form-label"></label>
-                                                    <input type="telContacto" class="form-control" id="telContacto" placeholder="Ej. 094662649">
-                                                  </div>
-                                                  <div class="mb-3">
-                                                    <label for="propietario" class="form-label"></label>
-                                                    <input type="propietario" class="form-control" id="propietario" placeholder="Ej. Josefa Perez">
-                                                  </div>
-                                                  <div class="mb-3">
-                                                    <label for="superficieTotal" class="form-label"></label>
-                                                    <input type="supTotal" class="form-control" id="supTotal" placeholder="Ej. 2000">
-                                                  </div>
-                                                  <div class="mb-3">
-                                                    <label for="areaPrivada" class="form-label"></label>
-                                                    <input type="areaPrivada" class="form-control" id="areaPrivada" placeholder="Ej. 500">
-                                                  </div>
-                                                  <div class="mb-3">
-                                                    <label for="ambientes" class="form-label"></label>
-                                                    <input type="ambientes" class="form-control" id="ambientes" placeholder="Ej. 10">
-                                                  </div>
-                                                  <div class="mb-3">
-                                                    <label for="dormitorios" class="form-label"></label>
-                                                    <input type="dormitorios" class="form-control" id="dormitorios" placeholder="Ej. 4">
-                                                  </div>
-                                                  <div class="mb-3">
-                                                    <label for="banos" class="form-label"></label>
-                                                    <input type="banos" class="form-control" id="banos" placeholder="Ej. 2">                        
-                                                  </div>
-                                                  <div class="mb-3">
-                                                    <label for="antiguedad" class="form-label"></label>
-                                                    <input type="antiguedad" class="form-control" id="antiguedad" placeholder="Ej. 15">
-                                                  </div>
-                                                  <div class="mb-3">
-                                                    <label for="gastosComunes" class="form-label"></label>
-                                                    <input type="gastosComunes" class="form-control" id="gastosComunes" placeholder="Ej. 2500">
-                                                  </div>
-                                                  <div class="mb-3">
-                                                    <label for="notas" class="form-label"></label>
-                                                    <input type="notas" class="form-control" id="notas" placeholder="Ingrese Notas de la propiedad">
-                                                  </div>
+			<!-- Grupo: Telefono Propietario -->
+			<div class="formulario__grupo" id="grupo__telefonoPropietario">
+				<label for="telefonoPropietario" class="formulario__label">Telefono Propietario</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="telefonoPropietario" id="telefonoPropietario" placeholder="Formato 094662649" required>
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El telefono debe ser de 9 dígitos.</p>
+			</div>
 
+			<!-- Grupo: Direccion Propiedad -->
+			<div class="formulario__grupo" id="grupo__direccionPropiedad">
+				<label for="direccionPropiedad" class="formulario__label">Direccion de la Propiedad</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="direccionPropiedad" id="direccionPropiedad" placeholder="18 de julio" required>
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">La direccion solo puede contener numeros, letras y guion bajo.</p>
+			</div>
 
-                                            </form>
+			<div class="formulario__mensaje" id="formulario__mensaje">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena la ficha de la propiedad correctamente. </p>
+			</div>
 
+			<div class="formulario__grupo formulario__grupo-btn-enviar">
+				<button type="button" id="guardarPropiedad" class="formulario__btn">Guardar</button>
+				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+			</div>
+		</form>
+	</main>
+	<div id="render">
 
-
-
-
-                                          
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                                          <button type="button" class="btn btn-success" id="guardarPropiedad">Guardar</button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                        </div>
-                        <div class="boton col-xs-12 col-sm-12 col-md-6 col-lg-3"> 
-                            <h2 class="h5"></h2> 
-                                           <!-- Button trigger modal -->
-                            <button id="ver"type="button" class="btn btn-info admin" data-bs-toggle="modal" data-bs-target="#opcionModal">
-                                <i class="fa-solid fa-house-chimney"></i> <n>VER PROPIEDAD</n>
-                            </button>
-                                        
-                                        <!-- Modal -->
-                            <!-- <div class="modal fade" id="opcionModal" tabindex="-1" aria-labelledby="opcionModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content ">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title" id="header-modal">Ingresa los datos de la nueva propiedad</h4>
-                                                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>                                
-                                        <div class="modal-body">
-                                            <form method="post" action="#"  class="form-contact">
-                                                <div class="mb-3">
-                                                    
-                                                    <input type="text" class="form-control" name="fecha" id="fecha" placeholder="Ingresa la fecha" requiered>
-                                                </div>
-                                                <div class="mb-3">
-                                                    
-                                                    <input type="text" class="form-control" name="nombreOperador" id="nombreOperador" placeholder="Operador Inmobiliario Asignado" requiered>
-                                                </div>
-                                                <div class="mb-3">
-                                                  
-                                                    <input type="text" class="form-control" name="nombreOperador" id="nombreOperador" placeholder="Telefono de Operador Inmobiliario" requiered>
-                                                </div>
-                                                <div class="mb-3">
-                                                    
-                                                    <input type="text" class="form-control" name="nombrePropietario" id="nombrePropietario" placeholder="Nombre del Propietario" requiered>
-                                                </div>
-                                                <div class="mb-3">
-                                                    
-                                                    <input type="text" class="form-control" name="telefonoPropietario" id="telefonoPropietario" placeholder="Telefono del Propietario" requiered>
-                                                </div>
-                                                <div class="mb-3">
-                                                    
-                                                    <input type="text" class="form-control" name="direccionPropietario" id="direccionPropietario" placeholder="Direccion del Propietario" requiered>
-                                                </div>
-                                                    </div>
-                                                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                        <div id="btnsendpadding" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                            <input type="submit" value="Guardar" id="btnGuardar" class="btn btn-success">
-                                                        </div>
-                                                        <div id="btnsendpadding" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                            <input type="submit" value="Cancelar" id="btnCancelar" class="btn btn-danger">
-                                                        </div>
-                                                    </div>
-                                                </div>                                          
-                                            </form> 
-                                        </div>
-                                    </div> -->
-                                </div>
-                                <div class="boton col-xs-12 col-sm-12 col-md-6 col-lg-3"> 
-                                    <h2 class="h5"></h2> 
-                                                   <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-danger admin" data-bs-toggle="modal" data-bs-target="#opcionModal">
-                                        <i class="fa-solid fa-delete-left"></i> <n>ELIMINAR PROPIEDAD</n>
-                                    </button>
-                                                
-                                                <!-- Modal -->
-                                    <!-- <div class="modal fade" id="opcionModal" tabindex="-1" aria-labelledby="opcionModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content ">
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title" id="header-modal">Ingresa los datos de la nueva propiedad</h4>
-                                                        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>                                
-                                                <div class="modal-body">
-                                                    <form method="post" action=""  class="form-contact">
-                                                        <div class="mb-3">
-                                                            
-                                                            <input type="text" class="form-control" name="fecha" id="fecha" placeholder="Ingresa la fecha" requiered>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                         
-                                                            <input type="text" class="form-control" name="nombreOperador" id="nombreOperador" placeholder="Operador Inmobiliario Asignado" requiered>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            
-                                                            <input type="text" class="form-control" name="nombreOperador" id="nombreOperador" placeholder="Telefono de Operador Inmobiliario" requiered>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            
-                                                            <input type="text" class="form-control" name="nombrePropietario" id="nombrePropietario" placeholder="Nombre del Propietario" requiered>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                          
-                                                            <input type="text" class="form-control" name="telefonoPropietario" id="telefonoPropietario" placeholder="Telefono del Propietario" requiered>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                         
-                                                            <input type="text" class="form-control" name="direccionPropietario" id="direccionPropietario" placeholder="Direccion del Propietario" requiered>
-                                                        </div>
-                                                            </div>
-                                                            <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                                <div id="btnsendpadding" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                    <input type="submit" value="Guardar" id="btnGuardar" class="btn btn-success">
-                                                                </div>
-                                                                <div id="btnsendpadding" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                    <input type="submit" value="Cancelar" id="btnCancelar" class="btn btn-danger">
-                                                                </div>
-                                                            </div>
-                                                        </div>                                          
-                                                    </form> 
-                                                </div>
-                                            </div> -->
-                                        </div>
-                                        <div class="boton col-xs-12 col-sm-12 col-md-6 col-lg-3"> 
-                                            <h2 class="h5"></h2> 
-                                                           <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-primary admin" data-bs-toggle="modal" data-bs-target="#opcionModal">
-                                                <i class="fa-solid fa-file-pen"></i> <n>ACTUALIZAR PROPIEDAD</n>
-                                            </button>
-                                                        
-                                                        <!-- Modal -->
-                                            <!-- <div class="modal fade" id="opcionModal" tabindex="-1" aria-labelledby="opcionModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content ">
-                                                        <div class="modal-header">
-                                                            <h4 class="modal-title" id="header-modal">Ingresa los datos de la nueva propiedad</h4>
-                                                                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>                                
-                                                        <div class="modal-body">
-                                                            <form method="post" action="#"  class="form-contact">
-                                                                <div class="mb-3">
-                                                                   
-                                                                    <input type="text" class="form-control" name="fecha" id="fecha" placeholder="Ingresa la fecha" requiered>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    
-                                                                    <input type="text" class="form-control" name="nombreOperador" id="nombreOperador" placeholder="Operador Inmobiliario Asignado" requiered>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                   
-                                                                    <input type="text" class="form-control" name="nombreOperador" id="nombreOperador" placeholder="Telefono de Operador Inmobiliario" requiered>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                 
-                                                                    <input type="text" class="form-control" name="nombrePropietario" id="nombrePropietario" placeholder="Nombre del Propietario" requiered>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                  
-                                                                    <input type="text" class="form-control" name="telefonoPropietario" id="telefonoPropietario" placeholder="Telefono del Propietario" requiered>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    
-                                                                    <input type="text" class="form-control" name="direccionPropietario" id="direccionPropietario" placeholder="Direccion del Propietario" requiered>
-                                                                </div>
-                                                                    </div>
-                                                                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                                        <div id="btnsendpadding" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                            <input type="submit" value="Guardar" id="btnGuardar" class="btn btn-success">
-                                                                        </div>
-                                                                        <div id="btnsendpadding" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                            <input type="submit" value="Cancelar" id="btnCancelar" class="btn btn-danger">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>                                          
-                                                            </form> 
-                                                        </div>
-                                                    </div> -->
-                                                </div>
-                    </div>
-
-                </div>                                           
-            </div>                 
-        </div>                         
-    </section>
-    <section>
-    <div id="render">
-    </div>
-    </section>
+	</div>
 </body>
+	<script src="validacionPropiedad.js"></script>
+	<script src="adminApp.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
 </html>
