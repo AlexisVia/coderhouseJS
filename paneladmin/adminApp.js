@@ -51,7 +51,16 @@ function nuevaPropiedad(){
     </div>`
     }
     render()
-    localStorage.setItem("PROPIEDAD_AGREGADA", nuevaPropiedad)
+    const nuevaPropiedadJSON = JSON.stringify(nuevaPropiedad)
+    localStorage.setItem("PROPIEDAD_AGREGADA", nuevaPropiedadJSON)
+    Swal.fire({
+        title: 'Propiedad Agregada',
+        text: `Haz Agregado correctamente la propiedad ubicada en ${direccionPropiedadIngresado}!`,
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+})
+    
+    
 }
 //****************************Llamado a funcion para AGREGAR PROPIEDAD**********************************************
 //Dentro de esta funcion ya corre la opcion de MOSTRAR por alerta los ultimos datos ingresados
@@ -59,11 +68,56 @@ function agregar(){
     const guardarPropiedad = document.getElementById("guardarPropiedad");
     guardarPropiedad.onclick = () =>{nuevaPropiedad()}
 }
-//****************************Llamado a funcion para VER PROPIEDAD**********************************************
-// function mostrar(){
-//     const agregar = document.getElementById("ver");
-//     agregar.onclick = () =>{filtrarPropiedad()}   
+//****************************Llamado a funcion para BUSCAR PROPIEDAD**********************************************
+
+function buscar(){
+    const qBuscar = document.getElementById("qBuscar").value
+    const buscarPropiedad = document.getElementById("buscando");
+    
+    buscarPropiedad.onclick = () => {
+        const resultado = JSON.parse(localStorage.getItem(qBuscar)); 
+        console.log(resultado)
+        console.log(qBuscar)
+        if (resultado == null){
+            Swal.fire({
+                title: 'No encontrado',
+                text: 'La Propiedad Buscada no existe',
+                icon: 'error',
+                confirmButtonText: 'Cerrar'
+            }) 
+        }
+        else{
+            alert(resultado)
+        }
+    }
+}
+buscar()
+
+// let busqueda = document.getElementById("qBuscar").value
+// function buscarPropiedad(){
+//      const qbuscar = document.getElementById("qBuscar");
+//      console.log("paso1")
+//     const buscar = document.getElementById("buscar")
+//     console.log("paso2")
+//      buscar.onclick = () =>{
+//         console.log("paso3")
+//         const busqueda = localStorage.getItem(qbuscar);
+//         if (busqueda != null){
+//             alert(busqueda)
+//             console.log("paso4")
+//         }
+//         else {
+//             alert("Propiedad no encontrada")
+//             console.log("paso5")
+//         }
+//         console.log("fin")
+//      }
 // }
+
+
+
+
+
 //****************************Llamado a funcion para ELIMINAR PROPIEDAD**********************************************
 
 
@@ -71,5 +125,5 @@ function agregar(){
 function loadBody(){
     agregar()
 }
-
 loadBody()
+
