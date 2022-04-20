@@ -29,7 +29,6 @@ function nuevaPropiedad(){
 
     let nuevaPropiedad = new Propiedad(opInmobiliarioingresado, nombrePropietarioIngresado,telefonoPropietarioIngresado, direccionPropiedadIngresado)
     ListadoPropiedades.push(nuevaPropiedad)
-    console.log(nuevaPropiedad)
     function render(){
         let cargando = document.getElementById("render")
         cargando.innerHTML = `<div class= "card-css col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xl-3">
@@ -59,7 +58,7 @@ function nuevaPropiedad(){
         icon: 'success',
         confirmButtonText: 'Aceptar'
 })
-    
+document.getElementById("formulario").reset();
     
 }
 //****************************Llamado a funcion para AGREGAR PROPIEDAD**********************************************
@@ -70,49 +69,71 @@ function agregar(){
 }
 //****************************Llamado a funcion para BUSCAR PROPIEDAD**********************************************
 
+const buscarPropiedad = document.getElementById("buscando");
+buscarPropiedad.addEventListener("click", (e) =>{
+    buscar()
+}
+)
+
 function buscar(){
-    const qBuscar = document.getElementById("qBuscar").value
-    const buscarPropiedad = document.getElementById("buscando");
+    const qBuscar = document.getElementById("qBuscar").value;
+    let propiedad = JSON.parse(localStorage.getItem("PROPIEDAD_AGREGADA"));
+    var busquedaOp = propiedad.opInmobiliario;
+    var busquedaNombre = propiedad.nombrePropietario;
+    var busquedaTelefono = propiedad.direccionPropiedad;
+    var busquedaDireccion = propiedad.direccionPropiedad;
+
     
-    buscarPropiedad.onclick = () => {
-        const resultado = JSON.parse(localStorage.getItem(qBuscar)); 
-        console.log(resultado)
-        console.log(qBuscar)
-        if (resultado == null){
+    if (qBuscar != busquedaOp){
+        Swal.fire({
+            title: 'No encontrado',
+            text: 'La Propiedad Buscada no existe',
+            icon: 'error',
+            confirmButtonText: 'Cerrar'
+        })
+    }
+    else {
+        if (busquedaOp != null){
+            Swal.fire({
+                title: 'Propiedad Encontrada',
+                icon: 'success',
+                confirmButtonText: 'Ver'
+        })
+        renderPropiedadEncontrada()
+        }
+        else{
             Swal.fire({
                 title: 'No encontrado',
                 text: 'La Propiedad Buscada no existe',
                 icon: 'error',
                 confirmButtonText: 'Cerrar'
-            }) 
+            })
         }
-        else{
-            alert(resultado)
-        }
+}
+function renderPropiedadEncontrada(){
+    let propiedadEncontrada = document.getElementById("render")
+        propiedadEncontrada.innerHTML = `<div class= "card-css col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xl-3">
+        <div class="card content-card">
+            <div class="card-body">
+            <h3>Las siguientes propiedades coinciden con su busqueda</h3>
+              <h5 class="card-title">Propiedad en ${busquedaDireccion}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><i class="fa-thin fa-person"></i> Operador Inmobiliario asignado ${busquedaOp}</li>
+              <li class="list-group-item"><span class="fa-solid fa-star"></span><span class="fa-solid fa-star"></span><span class="fa-solid fa-star"></span><span class="fa-solid fa-star"></span><span class="fa-solid fa-star"></span></li>
+              <li class="list-group-item"><i class="fa-thin fa-mobile-screen-button"></i></i> Telefono de Contacto: ${busquedaTelefono}</li>
+              <li class="list-group-item"><i class="fa-solid fa-house-chimney"></i> Propietario: ${busquedaNombre}</li>
+            </ul>
+            <div class="card-body">
+                <button type="button" class="btn btn-success">Publicar</button>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+            </div>
+          </div>
+    </div>`
     }
 }
-buscar()
 
-// let busqueda = document.getElementById("qBuscar").value
-// function buscarPropiedad(){
-//      const qbuscar = document.getElementById("qBuscar");
-//      console.log("paso1")
-//     const buscar = document.getElementById("buscar")
-//     console.log("paso2")
-//      buscar.onclick = () =>{
-//         console.log("paso3")
-//         const busqueda = localStorage.getItem(qbuscar);
-//         if (busqueda != null){
-//             alert(busqueda)
-//             console.log("paso4")
-//         }
-//         else {
-//             alert("Propiedad no encontrada")
-//             console.log("paso5")
-//         }
-//         console.log("fin")
-//      }
-// }
+
 
 
 
