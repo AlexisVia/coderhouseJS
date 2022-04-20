@@ -41,66 +41,78 @@
 		                
 	</nav> 
 </header> 
+
 	<main id="principal">
-		<form class="d-flex">
-			<input id="qBuscar" class="form-control me-2" type="search" placeholder="Buscar propiedad por nombre de operador inmobiliario" aria-label="Search">
-			<button class="btn btn-outline-success" type="button" id="buscando">Buscar</button>
-		</form>
-		<form action="" class="formulario" id="formulario">
-			<!-- Grupo: Operador Inmobiliario -->
-			<div class="formulario__grupo" id="grupo__opInmobiliario">
-				<label for="usuario" class="formulario__label">Operador Inmobiliario Asignado</label>
-				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="opInmobiliario" id="opInmobiliario" placeholder="Pedro Rodriguez" required>
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xl-3">
+				<button id="listarOp" type="button" class="listar btn btn-primary">LISTAR OPERADORES INMOBILIARIOS</button>
+			</div>
+		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xl-9">		
+			<form class="d-flex">
+				<input id="qBuscar" class="form-control me-2" type="search" placeholder="Buscar propiedad por nombre de operador inmobiliario" aria-label="Search">
+				<button class="btn btn-outline-success" type="button" id="buscando">Buscar</button>
+			</form>
+			<form action="" class="formulario" id="formulario">
+				<!-- Grupo: Operador Inmobiliario -->
+				<div class="formulario__grupo" id="grupo__opInmobiliario">
+					<label for="usuario" class="formulario__label">Operador Inmobiliario Asignado</label>
+					<div class="formulario__grupo-input">
+						<input type="text" class="formulario__input" name="opInmobiliario" id="opInmobiliario" placeholder="Pedro Rodriguez" required>
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>
+					<p class="formulario__input-error">El nombre del operador inmobiliario solo puede contener numeros, letras y guion bajo.</p>
 				</div>
-				<p class="formulario__input-error">El nombre del operador inmobiliario solo puede contener numeros, letras y guion bajo.</p>
-			</div>
 
-			<!-- Grupo: Nombre Propietario-->
-			<div class="formulario__grupo" id="grupo__nombrePropietario">
-				<label for="nombrePropietario" class="formulario__label">Nombre</label>
-				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="nombrePropietario" id="nombrePropietario" placeholder="Juan Perez" required>
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				<!-- Grupo: Nombre Propietario-->
+				<div class="formulario__grupo" id="grupo__nombrePropietario">
+					<label for="nombrePropietario" class="formulario__label">Nombre</label>
+					<div class="formulario__grupo-input">
+						<input type="text" class="formulario__input" name="nombrePropietario" id="nombrePropietario" placeholder="Juan Perez" required>
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>
+					<p class="formulario__input-error">El nombre del propietario solo puede contener numeros, letras y guion bajo.</p>
 				</div>
-				<p class="formulario__input-error">El nombre del propietario solo puede contener numeros, letras y guion bajo.</p>
-			</div>
 
-			<!-- Grupo: Telefono Propietario -->
-			<div class="formulario__grupo" id="grupo__telefonoPropietario">
-				<label for="telefonoPropietario" class="formulario__label">Telefono Propietario</label>
-				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="telefonoPropietario" id="telefonoPropietario" placeholder="Formato 094662649" required>
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				<!-- Grupo: Telefono Propietario -->
+				<div class="formulario__grupo" id="grupo__telefonoPropietario">
+					<label for="telefonoPropietario" class="formulario__label">Telefono Propietario</label>
+					<div class="formulario__grupo-input">
+						<input type="text" class="formulario__input" name="telefonoPropietario" id="telefonoPropietario" placeholder="Formato 094662649" required>
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>
+					<p class="formulario__input-error">El telefono debe ser de 9 dígitos.</p>
 				</div>
-				<p class="formulario__input-error">El telefono debe ser de 9 dígitos.</p>
-			</div>
 
-			<!-- Grupo: Direccion Propiedad -->
-			<div class="formulario__grupo" id="grupo__direccionPropiedad">
-				<label for="direccionPropiedad" class="formulario__label">Direccion de la Propiedad</label>
-				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="direccionPropiedad" id="direccionPropiedad" placeholder="18 de julio" required>
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				<!-- Grupo: Direccion Propiedad -->
+				<div class="formulario__grupo" id="grupo__direccionPropiedad">
+					<label for="direccionPropiedad" class="formulario__label">Direccion de la Propiedad</label>
+					<div class="formulario__grupo-input">
+						<input type="text" class="formulario__input" name="direccionPropiedad" id="direccionPropiedad" placeholder="18 de julio" required>
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>
+					<p class="formulario__input-error">La direccion solo puede contener numeros, letras y guion bajo.</p>
 				</div>
-				<p class="formulario__input-error">La direccion solo puede contener numeros, letras y guion bajo.</p>
-			</div>
 
-			<div class="formulario__mensaje" id="formulario__mensaje">
-				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena la ficha de la propiedad correctamente. </p>
-			</div>
+				<div class="formulario__mensaje" id="formulario__mensaje">
+					<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena la ficha de la propiedad correctamente. </p>
+				</div>
 
-			<div class="formulario__grupo formulario__grupo-btn-enviar">
-				<button type="button" id="guardarPropiedad" class="formulario__btn">Guardar</button>
-				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
-			</div>
-		</form>
+				<div class="formulario__grupo formulario__grupo-btn-enviar">
+					<button type="button" id="guardarPropiedad" class="formulario__btn">Guardar</button>
+					<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+				</div>
+			</form>
+		</div>
+	</div>
 	</main>
 </section>
 <section>
-	<div id="render">
+	<div id="ultimaPropiedadAgregada">		
+	</div>
+</section>
 
+<section>
+	<div id="render">
 	</div>
 </section>
 	
