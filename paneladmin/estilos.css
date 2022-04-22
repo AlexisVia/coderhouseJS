@@ -19,6 +19,9 @@ main {
 	margin-top: 150px;
 }
 
+#qBuscar{
+	border: 1px solid black
+}
 
 .formulario {
 	display: grid;
@@ -40,7 +43,7 @@ main {
 .formulario__input {
 	width: 100%;
 	background: #fff;
-	border: 3px solid transparent;
+	border: 1px solid black;
 	border-radius: 3px;
 	height: 45px;
 	line-height: 45px;
@@ -123,15 +126,51 @@ main {
 	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
 }
 
-.formulario__mensaje-exito {
-	font-size: 14px;
-	color: #119200;
-	display: none;
+.black{
+	color: black;
+	font-weight: bold;
 }
 
-.formulario__mensaje-exito-activo {
-	display: block;
+.var{
+	color:rgb(59, 2, 2);
+	font-weight: 500 ;
 }
+
+.fa-star{
+	color:rgb(255, 238, 0)
+}
+
+.fa-location-dot{
+	color: rgb(61, 4, 4);
+}
+
+.fa-phone{
+	color: rgb(0, 0, 63) ;
+}
+
+.renderPropiedadEncontrada{
+	padding: 10px 5px 10px 20px;
+	margin-left: 10px;
+}
+
+.renderUltimaPropiedad{
+	padding-left: 10px;
+	margin-left: 10px;
+}
+
+.infoEncontradas{
+	text-align: center;
+	font-size: 15px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-weight: 50;
+}
+
+.table-listar{
+	/* border: solid 1px #bb2929 !important; */
+	text-align: left;
+}
+
+
 
 /* ----- -----  Estilos para Validacion ----- ----- */
 .formulario__grupo-correcto .formulario__validacion-estado {
@@ -152,7 +191,6 @@ main {
 	border: 3px solid #bb2929;
 }
 
-
 /* ----- -----  Mediaqueries ----- ----- */
 @media screen and (max-width: 800px) {
 	.formulario {
@@ -168,4 +206,8 @@ main {
 	.formulario__btn {
 		width: 100%;
 	}
+
+
+
+	
 }
