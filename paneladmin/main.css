@@ -7,8 +7,6 @@ body {
 	background: #E5E5E5;
 }
 
-
-
 main {
 	max-width: 1500px;
 	width: 90%;
@@ -166,11 +164,12 @@ main {
 }
 
 .table-listar{
-	/* border: solid 1px #bb2929 !important; */
 	text-align: left;
 }
 
-
+span{
+	margin: 15px 5px 5px 5px;
+}
 
 /* ----- -----  Estilos para Validacion ----- ----- */
 .formulario__grupo-correcto .formulario__validacion-estado {
@@ -191,8 +190,8 @@ main {
 	border: 3px solid #bb2929;
 }
 
-/* ----- -----  Mediaqueries ----- ----- */
-@media screen and (max-width: 800px) {
+
+@media (max-width:576px){
 	.formulario {
 		grid-template-columns: 1fr;
 	}
@@ -207,7 +206,86 @@ main {
 		width: 100%;
 	}
 
+	.btn-menu{
+		text-align: center;
+		margin-top: 5px;
+		width: 100%;
+		height: 50px;
+		font-size: 12px !important;
+		font-family: 'Antonio', sans-serif;
+	}
+}
+@media (min-width:577px) and (max-width:768px){
+	.formulario {
+		grid-template-columns: 1fr;
+	}
 
+	.formulario__grupo-terminos, 
+	.formulario__mensaje,
+	.formulario__grupo-btn-enviar {
+		grid-column: 1;
+	}
 
-	
+	.formulario__btn {
+		width: 100%;
+	}
+
+	.btn-menu{
+		text-align: center;
+		margin-top: 5px;
+		width: 100%;
+		height: 50px;
+		font-size: 40px;
+		font-family: 'Antonio', sans-serif;
+	}
+}
+@media (max-width:991px) and (min-width:768px){
+	.formulario {
+		grid-template-columns: 1fr;
+	}
+
+	.formulario__grupo-terminos, 
+	.formulario__mensaje,
+	.formulario__grupo-btn-enviar {
+		grid-column: 1;
+	}
+
+	.formulario__btn {
+		width: 100%;
+	}
+
+	.btn-menu{
+		text-align: center;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		width: 100%;
+		height: 80px;
+		font-size: 40px;
+		font-family: 'Antonio', sans-serif;
+	}
+}
+@media (max-width:1199px) and (min-width: 992px) {
+
+	.btn-menu{
+		text-align: center;
+		margin-top: 5px;
+		width: 100%;
+		height: 80px;
+		font-size: 40px;
+		font-family: 'Antonio', sans-serif;
+	}
+
+}
+
+@media (min-width: 1200px){
+
+	.btn-menu{
+		text-align: center;
+		margin-top: 5px;
+		width: 100%;
+		height: 60px;
+		font-size: 40px;
+		font-family: 'Antonio', sans-serif;
+	}
+
 }

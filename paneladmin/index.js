@@ -1,15 +1,13 @@
-// My Global Var
+// Inicializando Variables
 let opInmobiliario = 1
 let nombrePropietario = 0
 let telefonoPropietario = "admin"
 let direccionPropiedad = 0
 
-
-//Array con todas las propiedades
+//Array con propiedades de la PROPIEDAD INMOBILIARIA agregada
 const ListadoPropiedades = []
 
-//Constructor del Objeto Propiedad
-
+//Constructor del Objeto PROPIEDAD
 class Propiedad{ 
     constructor(opInmobiliario, nombrePropietario, telefonoPropietario,direccionPropiedad){ 
         this.opInmobiliario = opInmobiliario, 
@@ -19,9 +17,7 @@ class Propiedad{
     }  
 }
 
-
-
-// Ingreso de datos generales para el inicio del programa
+//****************************Funcion para AGREGAR NUEVA PROPIEDAD******************************************************************************
 function nuevaPropiedad(){
     let opInmobiliarioingresado = document.getElementById("opInmobiliario").value
     let nombrePropietarioIngresado = document.getElementById("nombrePropietario").value
@@ -32,7 +28,7 @@ if (opInmobiliarioingresado != "" & nombrePropietarioIngresado != "" & telefonoP
     ListadoPropiedades.push(nuevaPropiedad)
     function render(){
         let cargando = document.getElementById("render")
-        cargando.innerHTML = `<div class= "card-css col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xl-3">
+        cargando.innerHTML = `<div class= "card-css col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xl-6">
         <div class="card content-card renderPropiedadEncontrada">
             <div class="card-body">
               <h5 class="black card-title"><i class="fa-solid fa-location-dot"></i> Propiedad en:<br><span class="var">${direccionPropiedadIngresado}</span></h5>
@@ -44,8 +40,8 @@ if (opInmobiliarioingresado != "" & nombrePropietarioIngresado != "" & telefonoP
               <li class="black list-group-item"><i class="fa-solid fa-user"></i> Propietario:<br><span class="var">${nombrePropietarioIngresado}</span></li>
             </ul>
             <div class="card-body">
-                <button type="button" class="btn btn-success">Publicar</button>
-                <button type="button" class="btn btn-danger">Eliminar</button>
+                <button type="button" class="btn btn-success disabled">Publicar</button>
+                <button id="eliminar" type="button" class="btn btn-danger">Eliminar</button>
             </div>
           </div>
         </div>`
@@ -70,24 +66,23 @@ else{
         icon: 'error',
         confirmButtonText: 'Cerrar'
     })
-}
-}
-//****************************Funcion para AGREGAR PROPIEDAD**********************************************
+}}
+
+//****************************Funcion para AGREGAR PROPIEDAD******************************************************************************
 //Dentro de esta funcion ya corre la opcion de MOSTRAR por alerta los ultimos datos ingresados
 function agregar(){
     const guardarPropiedad = document.getElementById("guardarPropiedad");
-    guardarPropiedad.onclick = () =>{nuevaPropiedad()}
-
-    
+    guardarPropiedad.onclick = () =>{nuevaPropiedad()}  
 }
-//****************************Funcion para BUSCAR PROPIEDAD**********************************************
+
+//****************************Escuchando evento para llamado a Funcion para BUSCAR PROPIEDAD**********************************************
 
 const buscarPropiedad = document.getElementById("buscando");
 buscarPropiedad.addEventListener("click", (e) =>{
     buscar()
-}
-)
+})
 
+//****************************Funcion para BUSCAR PROPIEDAD**********************************************
 function buscar(){
     const qBuscar = document.getElementById("qBuscar").value;
     let propiedad = JSON.parse(localStorage.getItem("PROPIEDAD_AGREGADA")) ;
@@ -161,9 +156,10 @@ function buscar(){
                 //     })
                 // }
         }
+        //****************************Funcion para HACER RENDER DE PROPIEDAD ENCONTRADA**********************************************
         function renderPropiedadEncontrada(){
             let propiedadEncontrada = document.getElementById("render")
-                propiedadEncontrada.innerHTML = `<div class= "card-css col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 col-xl-3">
+                propiedadEncontrada.innerHTML = `<div class= "card-css col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xl-6">
                 <div class="card content-card renderPropiedadEncontrada">
                     <div class="card-body">
                     <h3 class="infoEncontradas">LAS SIGUIENTES PROPIEDADES COINCIDEN CON SU BUSQUEDA</h3>
@@ -176,27 +172,42 @@ function buscar(){
                       <li class="black list-group-item"><i class="fa-solid fa-user"></i> Propietario: <span class="var">${nombrePropietarioEncontrado}</span></li>
                     </ul>
                     <div class="card-body">
-                        <button type="button" class="btn btn-success">Publicar</button>
-                        <button type="button" class="btn btn-danger">Eliminar</button>
+                        <button type="button" class="btn btn-success disabled">Publicar</button>
+                        <button id="eliminar" type="button" class="btn btn-danger disabled">Eliminar</button>
                     </div>
                   </div>
             </div>`
             }
         }
     }
-
-
 } 
 
+//****************************Funcion para ELIMINAR PROPIEDAD del BUSCADOR**********************************************
+function eliminarBuscador(){    
+    const eliminar = document.getElementById("eliminarBuscador");
+    eliminar.addEventListener("click", (e) =>{
 
-//****************************Funcion para ELIMINAR PROPIEDAD**********************************************
-
-
-
-
+    const comprobacionEliminar = JSON.parse( localStorage.getItem('PROPIEDAD_AGREGADA') )    
+    if ( comprobacionEliminar != null){
+                    var eliminar = document.getElementById("render")
+                    eliminar.innerHTML = ``,
+                    Swal.fire({
+                        title: 'Buscador Vaciado Correctamente',
+                        icon: 'success',
+                        confirmButtonText: 'Aceptar'
+                        })
+    }
+    else {
+        Swal.fire({
+                     title: 'Todavia no hay propiedades agregadas',
+                     icon: 'info',
+                     confirmButtonText: 'Aceptar'
+             })
+    }
+})
+}
 
 //****************************Funcion para COMPROBAR ULTIMA PROPIEDAD AGREGADA**********************************************
-
 function comprobacion(){
     const ultimaPropiedad = JSON.parse( localStorage.getItem('PROPIEDAD_AGREGADA') ) || []
     let comprobacionOp = ultimaPropiedad.opInmobiliario;
@@ -209,18 +220,32 @@ function comprobacion(){
     : `<h5 class="renderUltimaPropiedad">Aun no hay propiedades agregadas</h5>`;
 }
 
+//****************************Funcion para ELIMINAR PROPIEDAD del ALMACENAMIENTO LOCAL**********************************************
+
+function eliminarPropiedad(){
+    var eliminarPropiedad = document.getElementById("eliminarPropiedad")
+    eliminarPropiedad.addEventListener("click", (e)=>{
+                Swal.fire({
+                    title: 'Propiedades Eliminadas Correctamente',
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                    })
+                localStorage.removeItem('PROPIEDAD_AGREGADA')
+                var eliminar = document.getElementById("render")
+                    eliminar.innerHTML = ``
+                comprobacion()
+            }) 
+}
+
+
+
 //****************************Funcion para LISTAR OPERADORES INMOBILIARIOS AGREGADOS**********************************************
 function listarOp(){    
     const mostrarOp = document.getElementById("listarOp");
     mostrarOp.addEventListener("click", (e) =>{
-        
-    var mostrar = false
-    console.log(mostrar)
+
     const comprobacionListar = JSON.parse( localStorage.getItem('PROPIEDAD_AGREGADA') )    
     if ( comprobacionListar != null){
-        switch (mostrar){
-            case false:
-                
                     var opInmobiliarioListado = comprobacionListar.opInmobiliario;
                     opListados = document.getElementById("opListados")
                     opListados.innerHTML = `
@@ -228,24 +253,8 @@ function listarOp(){
                         <tr clas>
                             <td><strong>${opInmobiliarioListado}</strong></td>
                         </tr>
-                    </table>`
-                    mostrar = true
-                    console.log("Se mostro")
-                    
-                
-                
-                
-            case true:
-                
-                    opListados = document.getElementById("opListados")
-                    opListados.innerHTML = ``
-                    mostrar = false
-                    console.log("Se oculto")
-                    
-                   
-                
-        }
-
+                    </table>` 
+                    mostrarDatosApi()      
     }
     else {
         Swal.fire({
@@ -254,13 +263,51 @@ function listarOp(){
                      confirmButtonText: 'Aceptar'
              })
     }
-    // console.log(listar)
-//     const nombresObj = {
-//     ...listar
-// }
-// console.log(nombresObj)
 })
 }
+
+//****************************Funcion para OCULTAR OPERADORES INMOBILIARIOS AGREGADOS**********************************************
+function ocultarOp(){
+    const ocultarOp = document.getElementById("ocultarOp");
+    ocultarOp.addEventListener("click", (e) =>{
+    const comprobacionListar = JSON.parse( localStorage.getItem('PROPIEDAD_AGREGADA') )    
+    if ( comprobacionListar != null){
+                    opListados = document.getElementById("opListados")
+                    opListadosApi = document.getElementById("opListadosApi")
+                    opListados.innerHTML = ``
+                    opListadosApi.innerHTML =  ``      
+    }
+    else {
+        Swal.fire({
+                     title: 'Todavia no hay operadores inmobiliarios listados',
+                     icon: 'info',
+                     confirmButtonText: 'Aceptar'
+             })
+    }
+})
+}
+
+//****************************SIMULANDO CONEXION A API (LOCAL)**********************************************
+function mostrarDatosApi(){
+    let url = "data/listado.json"
+    const opListadosApi = document.getElementById("opListadosApi")
+    fetch(url)
+    .then((r)=>r.json())
+    .then((data)=>{
+        data.forEach((operadorInmobiliario)=>{
+            const table = document.createElement('table')
+            table.innerHTML = `
+            <table class="table info table-listar">
+                <tr clas>
+                    <td><strong>${operadorInmobiliario.dataOpInmobiliario}</strong></td>
+                </tr>
+            </table>
+            `
+            opListadosApi.append(table)
+        }) 
+    })
+}
+
 
 
 
@@ -268,9 +315,9 @@ function listarOp(){
 function loadBody(){
     agregar()
     comprobacion()
-    listarOp()  
+    listarOp()
+    ocultarOp()
+    eliminarBuscador()
+    eliminarPropiedad()
 }
 loadBody()
-
-
-
