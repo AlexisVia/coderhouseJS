@@ -41,7 +41,7 @@ if (opInmobiliarioingresado != "" & nombrePropietarioIngresado != "" & telefonoP
             </ul>
             <div class="card-body">
                 <button type="button" class="btn btn-success disabled">Publicar</button>
-                <button id="eliminar" type="button" class="btn btn-danger">Eliminar</button>
+                <button id="eliminar" type="button" class="btn btn-danger disabled">Eliminar</button>
             </div>
           </div>
         </div>`
